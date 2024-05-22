@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-@Document(indexName = "#{'semento-mysql-logs-'+T(java.time.LocalDate).now().toString().replace('-', '.')}")
+@Document(indexName = "#{'semento-mysql-logs-'+T(java.time.LocalDate).now()}")
 public class LogDocument {
 
     @Id

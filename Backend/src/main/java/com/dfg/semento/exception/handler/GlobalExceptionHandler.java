@@ -6,6 +6,7 @@ import com.dfg.semento.exception.RestApiException;
 import com.dfg.semento.exception.errorCode.CommonErrorCode;
 import com.dfg.semento.exception.errorCode.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.ElasticsearchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorCode errorCode = e.getAiErrorCode();
         return handleExceptionInternal(errorCode);
     }
-
+    
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Object> handleIllegalArgument(IllegalArgumentException e) {
