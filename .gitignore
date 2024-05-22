@@ -320,3 +320,11 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,macos,python
+
+*.xlsx
+*.csv
+*.pickle
+*/model
+data
+ai_models
+*.png
