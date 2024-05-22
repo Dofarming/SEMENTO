@@ -1,4 +1,7 @@
 ### Vuejs ###
+
+# json
+package-lock.json
 # Recommended template: Node.gitignore
 
 node_modules/
