@@ -13,7 +13,7 @@ from tqdm import tqdm
 from multiprocessing import Pool
 import time
 import random
-
+from routes.prompt import prompt_router
 
 
 path_model = load_model('./ai_models/path_model.h5')
@@ -21,9 +21,11 @@ time_model = load_model('./ai_models/time_model.h5')
 
 
 root_router = APIRouter()
+root_router.include_router(prompt_router,  prefix="/prompt")
+
 
 @root_router.get('/analytics/path')
-def analyze_by_Path(
+async def analyze_by_Path(
     start_date: str,
     end_date: str
 ):
@@ -37,7 +39,7 @@ def analyze_by_Path(
             return {"congestion-info": []}
 
         # 정체 path 조회 - 데이터 전처리    
-        preprocess_result = data_preprocessing_for_Conan(logs)    
+        preprocess_result = await data_preprocessing_for_Conan(logs)    
         deadlock_paths = preprocess_result["dataset"]    
         x_input = [path_matrix for (path_name, path_matrix) in deadlock_paths]
 
