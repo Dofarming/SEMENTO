@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException
-from sse_starlette import EventSourceResponse
 from routes.common import client
 from models.pydantic_model import DetectionResult
 import asyncio
