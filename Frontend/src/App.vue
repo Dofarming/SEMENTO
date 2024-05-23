@@ -10,7 +10,7 @@ if (isAuthenticated.value == false) confirm();
 function confirm() {
   const enteredPassword = prompt("시연을 위해 비밀번호를 입력받고 있습니다.");
   // 여기에서 실제 비밀번호 확인을 수행할 수 있습니다.
-  if (enteredPassword === "dfg123") {
+  if (enteredPassword === "dfgdfg123") {
     isAuthenticated.value = true;
   } else {
     alert("잘못된 비밀번호입니다.");
