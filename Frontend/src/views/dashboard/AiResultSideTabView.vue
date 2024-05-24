@@ -2,13 +2,7 @@
 import { ref, onMounted, watch } from "vue";
 import HeadText from "@/components/Text/HeadText.vue";
 import Cardhead from "@/components/Text/Cardhead.vue";
-import BlackDataCard from "@/components/card/BlackDataCard.vue";
 
-const ohtCount = ref(60);
-const totalWork = ref(5056);
-const averageWork = ref(84.27);
-const successRate = ref(40.17);
-const errorCount = ref(56);
 const error200 = ref(29);
 const error300 = ref(27);
 const maxJobTime = ref("10:00 - 11:00");
@@ -22,17 +16,6 @@ const avgIdleTime = ref("0분 39초");
   <div class="analysis-results">
     <HeadText header-text="분석 결과" />
 
-    <div class="cards">
-      <BlackDataCard title="가용 중인 OHT 수" :content="`${ohtCount}대`" />
-      <BlackDataCard title="총 작업량" :content="`${totalWork}건`" />
-      <BlackDataCard
-        title="평균 작업량"
-        :content="`한 OHT 당 월 ${averageWork}건`"
-      />
-      <BlackDataCard title="작업 성공률" :content="`${successRate}%`" />
-      <BlackDataCard title="에러 비율" :content="`${errorCount}건 중 100%`" />
-    </div>
-
     <div class="section">
       <Cardhead header-text="에러로 실패한 작업 로그" contentText="" />
       <p>
@@ -40,25 +23,8 @@ const avgIdleTime = ref("0분 39초");
         다수 발생했습니다.
       </p>
       <ul>
-        <li>200번 에러: {{ error200 }}건</li>
-        <li>300번 에러: {{ error300 }}건</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <Cardhead header-text="시간대 별 작업 및 유휴 상태 분석" contentText="" />
-      <ul>
-        <li>작업이 가장 많은 시간대: {{ maxJobTime }}</li>
-        <li>OHT가 가장 활발한 시간대: {{ maxWorkTime }}</li>
-        <li>유휴 상태가 많은 시간대: {{ maxIdleTime }}</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <Cardhead header-text="평균 작업 시간 및 유휴 시간" contentText="" />
-      <ul>
-        <li>평균 작업 시간: {{ avgWorkTime }}</li>
-        <li>평균 유휴 시간: {{ avgIdleTime }}</li>
+        <li>OHT 에러: {{ error200 }}건</li>
+        <li>설비 에러: {{ error300 }}건</li>
       </ul>
     </div>
 

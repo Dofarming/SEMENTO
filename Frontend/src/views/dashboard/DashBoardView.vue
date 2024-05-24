@@ -20,6 +20,7 @@ import LineChart from "./components/state-analysis/LineChart.vue";
 import { useDashboardStore } from "@/stores/dashboard";
 const dashboardStore = useDashboardStore();
 import { onMounted, watch, ref } from "vue";
+import { timeout } from "d3";
 
 // 날짜 계산
 const months = [
@@ -82,9 +83,25 @@ const maxIdleTime = ref({
 });
 const buttonClick = ref(false);
 const sideTabView = ref(null);
+const buttonLoading = ref(false); // button의 로딩 표시를 위한 변수
+const buttonLoadDone = ref(false); // button의 로딩이 끝났는지 확인하는 변수
+const buttonFirstTime = ref(false);
 
 function handleButton() {
-  buttonClick.value = !buttonClick.value;
+  // 만약 buttonClick이 false이면
+  // spin이 2초동안 돌아야 함
+  // 2초가 지나면 check icon으로 변경시킬 예정
+  if (!buttonClick.value && !buttonFirstTime.value) {
+    buttonLoading.value = true;
+    buttonFirstTime.value = true;
+    setTimeout(() => {
+      buttonLoading.value = false;
+      buttonLoadDone.value = true;
+      // buttonClick.value = !buttonClick.value;
+    }, 2000);
+  } else {
+    buttonClick.value = !buttonClick.value;
+  }
 }
 
 onMounted(async () => {
@@ -185,6 +202,19 @@ const formatNumber = (value) => {
             fontColor="white"
             width="90px"
             @click="handleButton"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'spinner']"
+            style="color: #74c0fc"
+            spin
+            v-if="buttonLoading"
+            class="spinner-icon"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'check']"
+            style="color: #74c0fc"
+            v-if="buttonLoadDone"
+            class="spinner-icon"
           />
         </div>
       </div>
@@ -452,6 +482,9 @@ const formatNumber = (value) => {
 }
 
 .ai-solution {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 간격 추가 */
   margin-left: auto;
   margin-right: 3%;
 }
