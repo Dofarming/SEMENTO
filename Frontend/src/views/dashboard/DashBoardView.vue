@@ -7,6 +7,8 @@ import Cardhead from "@/components/Text/Cardhead.vue";
 import Table from "@/components/table/Table.vue";
 import WhiteCard from "./components/state-analysis/WhiteCard.vue";
 import Loading from "@/components/loading/Loading.vue";
+import Button from "@/components/button/Button.vue";
+import AiResultSideTabView from "@/views/dashboard/AiResultSideTabView.vue";
 
 // 차트
 import StickChart from "./components/job-analysis/StickChart.vue";
@@ -78,6 +80,12 @@ const maxIdleTime = ref({
   startTime: "",
   endTime: "",
 });
+const buttonClick = ref(false);
+const sideTabView = ref(null);
+
+function handleButton() {
+  buttonClick.value = !buttonClick.value;
+}
 
 onMounted(async () => {
   if (dashboardStore.startTime == "" && dashboardStore.endTime == "") {
@@ -167,9 +175,18 @@ const formatNumber = (value) => {
   <div v-if="nowLoading"><Loading /></div>
   <div v-else="!nowLoading" class="body-container">
     <div class="col container-header">
-      <div class="row">
+      <div class="row space-between">
         <div class="search-period">Months</div>
         <div class="search-date">{{ months[month] }}, {{ year }}</div>
+        <div class="ai-solution">
+          <Button
+            title="AI 솔루션"
+            backgroundColor="#003CB0"
+            fontColor="white"
+            width="90px"
+            @click="handleButton"
+          />
+        </div>
       </div>
     </div>
     <Line />
@@ -362,6 +379,17 @@ const formatNumber = (value) => {
         </div>
       </div>
     </div>
+    <div class="side-page" :class="{ open: buttonClick }">
+      <section>
+        <font-awesome-icon
+          @click="handleButton"
+          :icon="['fas', 'angles-right']"
+          size="2xl"
+          style="color: #383839; margin-left: 15px; margin-top: 20px"
+        />
+      </section>
+      <AiResultSideTabView ref="sideTabView" />
+    </div>
   </div>
   <div class="footer"></div>
 </template>
@@ -422,6 +450,12 @@ const formatNumber = (value) => {
   font-weight: 400;
   margin-left: 10px;
 }
+
+.ai-solution {
+  margin-left: auto;
+  margin-right: 3%;
+}
+
 .job-time {
   width: 100%;
 }
@@ -447,5 +481,27 @@ const formatNumber = (value) => {
 .line-chart {
   width: 100%;
   padding: 20px 0;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.side-page {
+  width: 62%;
+  height: 100%;
+  background-color: #f3f2f7;
+  position: fixed;
+  top: 0;
+  right: -62%; /* 초기 위치는 오른쪽 바깥에 있습니다 */
+  transition: right 0.5s;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.09);
+  overflow: scroll;
+}
+
+.side-page.open {
+  right: 0; /* 열릴 때 위치 */
 }
 </style>
