@@ -78,7 +78,7 @@ defineExpose({
       </div>
       <section class="white-box simulation-box">
         <section class="title">
-          <Cardhead headerText="Simulation" contentText=""></Cardhead>
+          <Cardhead headerText="시뮬레이션" contentText=""></Cardhead>
         </section>
         <section class="content">
           <DeadLineSimulation ref="simulationView" />

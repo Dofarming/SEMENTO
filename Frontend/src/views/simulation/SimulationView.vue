@@ -178,7 +178,7 @@ function toggleSidePageHandler(data) {
             <div class="black-card-content">
               <BlackDataCard
                 title="총 생산량"
-                :content="simulationStore().totalWork.data"
+                :content="simulationStore().totalWork.data + ' 건'"
                 :percentage="simulationStore().totalWork.percent + '%'"
                 :fontColor="
                   simulationStore().totalWork.percent >= 0 ? 'red' : 'blue'
@@ -188,7 +188,7 @@ function toggleSidePageHandler(data) {
               />
               <BlackDataCard
                 title="데드라인 초과"
-                :content="simulationStore().outOfDeadline.data"
+                :content="simulationStore().outOfDeadline.data + ' 건'"
                 :percentage="simulationStore().outOfDeadline.percent + '%'"
                 :fontColor="
                   simulationStore().outOfDeadline.percent >= 0 ? 'red' : 'blue'
@@ -200,7 +200,7 @@ function toggleSidePageHandler(data) {
             <div class="black-card-content">
               <BlackDataCard
                 title="평균 속도"
-                :content="simulationStore().averageSpeed.data"
+                :content="simulationStore().averageSpeed.data + ' m/s'"
                 :percentage="simulationStore().averageSpeed.percent + '%'"
                 :fontColor="
                   simulationStore().averageSpeed.percent >= 0 ? 'red' : 'blue'
@@ -210,7 +210,7 @@ function toggleSidePageHandler(data) {
               />
               <BlackDataCard
                 title="OHT 에러"
-                :content="simulationStore().ohtError.data"
+                :content="simulationStore().ohtError.data + ' 건'"
                 :percentage="simulationStore().ohtError.percent + '%'"
                 :fontColor="
                   simulationStore().ohtError.percent >= 0 ? 'red' : 'blue'
