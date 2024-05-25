@@ -166,12 +166,13 @@ onMounted(async () => {
   background-color: #003cb0;
   color: white;
   width: 50%;
-  font-size: 20px;
+  font-size: 18px;
 }
 .white {
   color: #003cb0;
   background-color: white;
   width: 50%;
+  font-size: 18px;
 }
 .title {
   margin-left: 23px;
