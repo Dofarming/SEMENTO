@@ -9,6 +9,11 @@ const props = defineProps({
     type: Object,
     default: [],
   },
+  number: {
+    type: Number,
+    default: 0,
+  },
+
 });
 
 const timeOrder = ref(0);
@@ -1703,11 +1708,34 @@ const ohtTexts = [];
 const length = 13; //oht를 표시하는 사각형의 길이
 
 function drawSimulation(width, height) {
-  svg = d3
+  
+  const tempSvg = d3
     .select(svgContainer.value)
     .append("svg")
     .attr("width", width)
     .attr("height", height);
+
+  let initialTransform = "";
+
+  // ohtLogs가 있을 경우에만(조회한 시간대에 시뮬레이션 로그가 있는 경우에만) 초기 포커싱 위치 설정
+  if (ohtLogs.value["simulation-log"].length !== 0) {
+    const causeOhtId = props.errorData["cause-oht"];
+    const causeOht = ohtLogs.value["simulation-log"][0]["data"].find(
+      (log) => log["oht-id"] === causeOhtId
+    );
+
+    if (causeOht) {
+      const initialX = causeOht["location"]["point-x"];
+      const initialY = causeOht["location"]["point-y"];
+      // initialTransform = `translate(${width / 2 - xScale(initialX)}, ${height / 2 - yScale(initialY)})`;
+      // translate와 scale을 함께 사용하여 초기 위치와 확대 설정
+      const scale = 2; // 2배 확대 예시
+      initialTransform = `translate(${width / 2 - xScale(initialX) * scale}, ${height / 2 - yScale(initialY) * scale}) scale(${scale})`;
+    }
+  }
+
+  const svg = tempSvg.append("g")
+    .attr("transform", initialTransform);
 
   // 노드와 링크 그리기
   svg
@@ -1780,14 +1808,19 @@ function drawSimulation(width, height) {
     .attr("fill", "white")
     .text((d) => d.id);
 
+
   //ohtLogs가 있을 경우에만(조회한 시간대에 시뮬레이션 로그가 있는 경우에만) oht 그려주기
   if (ohtLogs.value["simulation-log"].length !== 0) {
+    const excludeIds = [2600, 2604, 2607, 2593, 2587, 2586];
     // for문을 사용하여 30개의 원을 생성하고 ohts 배열에 저장합니다.
     for (
       let i = 0;
       i < ohtLogs.value["simulation-log"][0]["data"].length;
       i++
     ) {
+      // if (excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"])) {
+      //   continue;
+      // }
       const point = svg
         .append("rect")
         .attr("width", length)
@@ -1813,9 +1846,9 @@ function drawSimulation(width, height) {
           )
         )
         .attr("rx", 3) // 모서리 둥근 처리를 위한 x축 반경
-        .attr("fill", ohtColor)
+        .attr("fill", excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]) ? "white" : ohtColor)
         .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
-
+        
       const ohtId = svg
         .append("text")
         .attr(
@@ -1834,7 +1867,7 @@ function drawSimulation(width, height) {
           )
         )
         .attr("rx", 3) // 모서리 둥근 처리를 위한 x축 반경
-        .attr("fill", ohtColor) // 각 원의 색상을 동적으로 설정합니다.
+        .attr("fill", excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]) ? "white" : ohtColor)
         .attr("text-anchor", "middle")
         .attr("font-size", 7)
         .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
@@ -1861,6 +1894,7 @@ function drawSimulation(width, height) {
 let nowTime = 0;
 
 function movePoint(currentTime) {
+  const excludeIds = [2600, 2604, 2607, 2593, 2587, 2586];
   ohts.forEach((point, idx) => {
     const currentOht =
       ohtLogs.value["simulation-log"][currentTime]["data"][idx];
@@ -1889,13 +1923,23 @@ function movePoint(currentTime) {
       ohtTexts[idx].attr("fill", "#F27A16");
       point.attr("fill", "#F27A16");
     } else {
-      ohtTexts[idx].attr("fill", ohtColor);
-      point.attr("fill", ohtColor);
+      if(props.number == 1) {
+        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "white" : ohtColor)
+        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "#FFFFFF" : ohtColor)  
+      } else {
+        ohtTexts[idx].attr("fill", ohtColor)
+        point.attr("fill", ohtColor)
+      }
     }
 
     if (currentOht["status"] !== "W" && currentOht["error"] === 0) {
-      ohtTexts[idx].attr("fill", ohtColor);
-      point.attr("fill", ohtColor);
+      if(props.number == 1) {
+        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "white" : ohtColor)
+        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "#FFFFFF" : ohtColor)  
+      } else {
+        ohtTexts[idx].attr("fill", ohtColor)
+        point.attr("fill", ohtColor)
+      }
     } else if (currentOht["status"] !== "W" && currentOht["error"] === 200) {
       ohtTexts[idx].attr("fill", "red");
       point.attr("fill", "red");
