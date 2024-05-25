@@ -30,24 +30,24 @@ const errorCounts = computed(() => {
 const errorData = computed(() => {
   return [
     {
-      name: "Facility Error",
+      name: "설비 에러",
       amount: errorCounts.value["Facility Error"],
-      size: errorCounts.value["Facility Error"] + 2, 
+      size: errorCounts.value["Facility Error"] + 2,
       color: "#292D30",
     },
     {
-      name: "OHT Error",
+      name: "OHT 에러",
       amount: errorCounts.value["OHT Error"],
-      size: errorCounts.value["OHT Error"] + 2, 
+      size: errorCounts.value["OHT Error"] + 2,
       color: "#34B3F1",
     },
     {
-      name: "Scheduling Error",
+      name: "명령 쏠림",
       amount: errorCounts.value["ETC Error"],
-      size: errorCounts.value["ETC Error"] + 2, 
+      size: errorCounts.value["ETC Error"] + 2,
       color: "#BCE0F2",
     },
-  ]
+  ];
   // .filter((error) => error.amount > 0);
 });
 
