@@ -86,19 +86,17 @@ const maxIdleTime = ref({
 const buttonClick = ref(false);
 const sideTabView = ref(null);
 const buttonLoading = ref(false); // button의 로딩 표시를 위한 변수
-const buttonLoadDone = ref(false); // button의 로딩이 끝났는지 확인하는 변수
-const buttonFirstTime = ref(false);
 
 function handleButton() {
   // 만약 buttonClick이 false이면
   // spin이 2초동안 돌아야 함
   // 2초가 지나면 check icon으로 변경시킬 예정
-  if (!buttonClick.value && !buttonFirstTime.value) {
+  if (!buttonClick.value && !dashboardStore.buttonFirstTime) {
     buttonLoading.value = true;
-    buttonFirstTime.value = true;
+    dashboardStore.buttonFirstTime = true;
     setTimeout(() => {
       buttonLoading.value = false;
-      buttonLoadDone.value = true;
+      dashboardStore.buttonLoadDone = true;
       AISolutionNotificationStore.sendAISolutionNotification(); // 알림 띄우기
       // buttonClick.value = !buttonClick.value;
     }, 2000);
@@ -216,7 +214,7 @@ const formatNumber = (value) => {
           <font-awesome-icon
             :icon="['fas', 'check']"
             style="color: #74c0fc"
-            v-if="buttonLoadDone"
+            v-if="dashboardStore.buttonLoadDone"
             class="spinner-icon"
           />
         </div>

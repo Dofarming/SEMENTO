@@ -1,7 +1,7 @@
 <script setup>
 import { storeToRefs } from "pinia";
-import { useNotificationStore } from "@/stores/notification";
-const store = useNotificationStore();
+import { useAISolutionNotificationStore } from "@/stores/ainotification";
+const store = useAISolutionNotificationStore();
 const { showAISolutionNotification, closeNotification } = storeToRefs(store);
 
 const beforeEnter = (el) => {
@@ -50,13 +50,7 @@ const leave = (el, done) => {
             &nbsp;<b>SEMENTO AI의 Solution이 도착하였습니다!</b></span
           >
           <span class="close-button" @click="store.closeAISolutionNotification">
-            <span>
-              <!-- <span class="time"
-                >{{ time[3] }}:{{ time[4] }}:{{
-                  time[5]
-                }}&nbsp;&nbsp;&nbsp;
-              </span>  -->
-            </span>
+            <span></span>
             <font-awesome-icon
               :icon="['fas', 'xmark']"
               size="xl"
