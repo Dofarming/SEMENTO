@@ -4,6 +4,8 @@ import * as d3 from "d3";
 import { simulationComponentStore } from "@/stores/simulationComponent";
 const { getCongestionSimulation } = simulationComponentStore();
 
+import { useAnalysisStore } from "@/stores/analysis";
+const analysisStore = useAnalysisStore();
 const props = defineProps({
   errorData: {
     type: Object,
@@ -1559,6 +1561,398 @@ const curvedLinks = [
   { source: "282", target: "164" },
 ];
 
+const path_link = {
+    path32: { source: "20", target: "22" },
+    path40: { source: "42", target: "44" },
+    path48: { source: "64", target: "66" },
+    path64: { source: "86", target: "88" },
+    path16: { source: "10", target: "12" },
+    path7: { source: "8", target: "9" },
+    path6: { source: "7", target: "8" },
+    path5: { source: "6", target: "7" },
+    path4: { source: "5", target: "6" },
+    path3: { source: "4", target: "5" },
+    path2: { source: "2", target: "3" },
+    path1: { source: "1", target: "2" },
+    path: { source: "tn", target: "1" },
+    path8: { source: "2", target: "11" },
+    path81: { source: "22", target: "23" },
+    path82: { source: "23", target: "24" },
+    path83: { source: "44", target: "45" },
+    path84: { source: "45", target: "46" },
+    path85: { source: "66", target: "67" },
+    path86: { source: "67", target: "68" },
+    path87: { source: "88", target: "89" },
+    path88: { source: "89", target: "90" },
+    path89: { source: "108", target: "110" },
+    path90: { source: "110", target: "111" },
+    path91: { source: "111", target: "112" },
+    path92: { source: "112", target: "113" },
+    path93: { source: "113", target: "114" },
+    path94: { source: "115", target: "118" },
+    path95: { source: "118", target: "119" },
+    path96: { source: "120", target: "89" },
+    path97: { source: "120", target: "121" },
+    path98: { source: "88", target: "121" },
+    path99: { source: "121", target: "122" },
+    path100: { source: "123", target: "126" },
+    path101: { source: "126", target: "127" },
+    path102: { source: "128", target: "67" },
+    path103: { source: "128", target: "129" },
+    path104: { source: "66", target: "129" },
+    path105: { source: "129", target: "130" },
+    path106: { source: "132", target: "135" },
+    path107: { source: "135", target: "136" },
+    path108: { source: "138", target: "45" },
+    path109: { source: "138", target: "139" },
+    path110: { source: "44", target: "139" },
+    path111: { source: "139", target: "140" },
+    path112: { source: "141", target: "144" },
+    path113: { source: "144", target: "145" },
+    path114: { source: "146", target: "23" },
+    path115: { source: "146", target: "147" },
+    path116: { source: "22", target: "147" },
+    path117: { source: "147", target: "148" },
+    path118: { source: "149", target: "152" },
+    path119: { source: "152", target: "153" },
+    path120: { source: "154", target: "155" },
+    path123: { source: "304", target: "305" },
+    path124: { source: "304", target: "156" },
+    path125: { source: "156", target: "157" },
+    path126: { source: "158", target: "159" },
+    path127: { source: "159", target: "151" },
+    path128: { source: "151", target: "152" },
+    path129: { source: "149", target: "150" },
+    path130: { source: "150", target: "160" },
+    path131: { source: "160", target: "161" },
+    path132: { source: "158", target: "161" },
+    path133: { source: "3", target: "4" },
+    path134: { source: "9", target: "10" },
+    path135: { source: "161", target: "162" },
+    path136: { source: "163", target: "164" },
+    path137: { source: "164", target: "165" },
+    path138: { source: "166", target: "167" },
+    path139: { source: "167", target: "143" },
+    path140: { source: "143", target: "144" },
+    path141: { source: "141", target: "142" },
+    path142: { source: "142", target: "168" },
+    path143: { source: "168", target: "169" },
+    path144: { source: "166", target: "169" },
+    path145: { source: "169", target: "170" },
+    path146: { source: "171", target: "172" },
+    path147: { source: "172", target: "173" },
+    path148: { source: "174", target: "175" },
+    path149: { source: "175", target: "134" },
+    path150: { source: "134", target: "135" },
+    path151: { source: "132", target: "133" },
+    path152: { source: "133", target: "176" },
+    path153: { source: "176", target: "177" },
+    path154: { source: "174", target: "177" },
+    path155: { source: "177", target: "178" },
+    path156: { source: "179", target: "180" },
+    path157: { source: "180", target: "181" },
+    path158: { source: "182", target: "183" },
+    path159: { source: "183", target: "125" },
+    path160: { source: "125", target: "126" },
+    path161: { source: "123", target: "124" },
+    path162: { source: "124", target: "184" },
+    path163: { source: "184", target: "185" },
+    path164: { source: "182", target: "185" },
+    path165: { source: "185", target: "186" },
+    path166: { source: "187", target: "188" },
+    path167: { source: "188", target: "189" },
+    path168: { source: "190", target: "191" },
+    path169: { source: "191", target: "117" },
+    path170: { source: "117", target: "118" },
+    path171: { source: "115", target: "116" },
+    path172: { source: "116", target: "192" },
+    path173: { source: "192", target: "193" },
+    path174: { source: "190", target: "193" },
+    path175: { source: "193", target: "194" },
+    path176: { source: "195", target: "196" },
+    path177: { source: "196", target: "197" },
+    path178: { source: "197", target: "198" },
+    path15: { source: "12", target: "21" },
+    path180: { source: "19", target: "20" },
+    path9: { source: "18", target: "19" },
+    path10: { source: "17", target: "18" },
+    path11: { source: "16", target: "17" },
+    path12: { source: "15", target: "16" },
+    path13: { source: "14", target: "15" },
+    path179: { source: "13", target: "14" },
+    path14: { source: "12", target: "13" },
+    path24: { source: "24", target: "33" },
+    path17: { source: "32", target: "34" },
+    path25: { source: "34", target: "43" },
+    path183: { source: "41", target: "42" },
+    path26: { source: "40", target: "41" },
+    path27: { source: "39", target: "40" },
+    path28: { source: "38", target: "39" },
+    path29: { source: "37", target: "38" },
+    path30: { source: "36", target: "37" },
+    path184: { source: "35", target: "36" },
+    path31: { source: "34", target: "35" },
+    path182: { source: "31", target: "32" },
+    path18: { source: "30", target: "31" },
+    path19: { source: "29", target: "30" },
+    path20: { source: "28", target: "29" },
+    path21: { source: "27", target: "28" },
+    path22: { source: "26", target: "27" },
+    path181: { source: "25", target: "26" },
+    path23: { source: "24", target: "25" },
+    path33: { source: "46", target: "55" },
+    path34: { source: "54", target: "56" },
+    path35: { source: "56", target: "65" },
+    path185: { source: "63", target: "64" },
+    path36: { source: "62", target: "63" },
+    path37: { source: "61", target: "62" },
+    path38: { source: "60", target: "61" },
+    path39: { source: "59", target: "60" },
+    path41: { source: "58", target: "59" },
+    path186: { source: "57", target: "58" },
+    path42: { source: "56", target: "57" },
+    path187: { source: "53", target: "54" },
+    path43: { source: "52", target: "53" },
+    path44: { source: "51", target: "52" },
+    path45: { source: "50", target: "51" },
+    path46: { source: "49", target: "50" },
+    path47: { source: "48", target: "49" },
+    path188: { source: "47", target: "48" },
+    path80: { source: "46", target: "47" },
+    path49: { source: "68", target: "77" },
+    path50: { source: "76", target: "78" },
+    path51: { source: "78", target: "87" },
+    path189: { source: "85", target: "86" },
+    path52: { source: "84", target: "85" },
+    path53: { source: "83", target: "84" },
+    path54: { source: "82", target: "83" },
+    path55: { source: "81", target: "82" },
+    path56: { source: "80", target: "81" },
+    path190: { source: "79", target: "80" },
+    path57: { source: "78", target: "79" },
+    path191: { source: "75", target: "76" },
+    path58: { source: "74", target: "75" },
+    path59: { source: "73", target: "74" },
+    path60: { source: "72", target: "73" },
+    path61: { source: "71", target: "72" },
+    path62: { source: "70", target: "71" },
+    path192: { source: "69", target: "70" },
+    path193: { source: "68", target: "69" },
+    path63: { source: "90", target: "99" },
+    path65: { source: "98", target: "100" },
+    path66: { source: "100", target: "109" },
+    path194: { source: "107", target: "108" },
+    path67: { source: "106", target: "107" },
+    path68: { source: "105", target: "106" },
+    path69: { source: "104", target: "105" },
+    path70: { source: "103", target: "104" },
+    path71: { source: "102", target: "103" },
+    path195: { source: "101", target: "102" },
+    path72: { source: "100", target: "101" },
+    path196: { source: "97", target: "98" },
+    path73: { source: "96", target: "97" },
+    path74: { source: "95", target: "96" },
+    path75: { source: "94", target: "95" },
+    path76: { source: "93", target: "94" },
+    path77: { source: "92", target: "93" },
+    path197: { source: "91", target: "92" },
+    path198: { source: "90", target: "91" },
+    path78: { source: "112", target: "306" },
+    path79: { source: "198", target: "199" },
+    path199: { source: "199", target: "200" },
+    path200: { source: "200", target: "201" },
+    path201: { source: "201", target: "202" },
+    path202: { source: "202", target: "203" },
+    path203: { source: "203", target: "204" },
+    path204: { source: "204", target: "205" },
+    path205: { source: "205", target: "206" },
+    path206: { source: "206", target: "207" },
+    path207: { source: "199", target: "208" },
+    path217: { source: "207", target: "209" },
+    path208: { source: "209", target: "210" },
+    path209: { source: "210", target: "211" },
+    path210: { source: "211", target: "212" },
+    path211: { source: "212", target: "213" },
+    path212: { source: "213", target: "214" },
+    path213: { source: "214", target: "215" },
+    path214: { source: "215", target: "216" },
+    path215: { source: "216", target: "217" },
+    path216: { source: "209", target: "218" },
+    path218: { source: "217", target: "219" },
+    path219: { source: "219", target: "220" },
+    path239: { source: "220", target: "221" },
+    path220: { source: "221", target: "222" },
+    path221: { source: "222", target: "223" },
+    path222: { source: "223", target: "224" },
+    path223: { source: "224", target: "225" },
+    path224: { source: "225", target: "226" },
+    path225: { source: "226", target: "227" },
+    path226: { source: "227", target: "228" },
+    path227: { source: "228", target: "229" },
+    path228: { source: "221", target: "230" },
+    path229: { source: "229", target: "231" },
+    path230: { source: "231", target: "232" },
+    path231: { source: "232", target: "233" },
+    path232: { source: "233", target: "234" },
+    path233: { source: "234", target: "235" },
+    path234: { source: "235", target: "236" },
+    path235: { source: "236", target: "237" },
+    path236: { source: "237", target: "238" },
+    path237: { source: "238", target: "239" },
+    path238: { source: "231", target: "240" },
+    path261: { source: "239", target: "241" },
+    path240: { source: "241", target: "242" },
+    path241: { source: "242", target: "243" },
+    path242: { source: "243", target: "244" },
+    path243: { source: "244", target: "245" },
+    path244: { source: "245", target: "246" },
+    path245: { source: "246", target: "247" },
+    path246: { source: "247", target: "248" },
+    path247: { source: "248", target: "249" },
+    path248: { source: "249", target: "250" },
+    path249: { source: "250", target: "251" },
+    path250: { source: "243", target: "307" },
+    path251: { source: "251", target: "252" },
+    path252: { source: "252", target: "253" },
+    path253: { source: "253", target: "254" },
+    path254: { source: "254", target: "255" },
+    path255: { source: "255", target: "256" },
+    path256: { source: "256", target: "257" },
+    path257: { source: "257", target: "258" },
+    path258: { source: "258", target: "259" },
+    path259: { source: "259", target: "260" },
+    path260: { source: "252", target: "308" },
+    path283: { source: "260", target: "261" },
+    path262: { source: "261", target: "262" },
+    path263: { source: "262", target: "263" },
+    path264: { source: "263", target: "264" },
+    path265: { source: "264", target: "265" },
+    path266: { source: "265", target: "266" },
+    path267: { source: "266", target: "267" },
+    path268: { source: "267", target: "268" },
+    path269: { source: "268", target: "269" },
+    path270: { source: "269", target: "270" },
+    path271: { source: "270", target: "271" },
+    path272: { source: "263", target: "309" },
+    path273: { source: "271", target: "272" },
+    path274: { source: "272", target: "273" },
+    path275: { source: "273", target: "274" },
+    path276: { source: "274", target: "275" },
+    path277: { source: "275", target: "276" },
+    path278: { source: "276", target: "277" },
+    path279: { source: "277", target: "278" },
+    path280: { source: "278", target: "279" },
+    path281: { source: "279", target: "280" },
+    path282: { source: "272", target: "281" },
+    path305: { source: "280", target: "282" },
+    path284: { source: "282", target: "283" },
+    path285: { source: "283", target: "284" },
+    path286: { source: "284", target: "285" },
+    path287: { source: "285", target: "286" },
+    path288: { source: "286", target: "287" },
+    path289: { source: "287", target: "288" },
+    path290: { source: "288", target: "289" },
+    path291: { source: "289", target: "290" },
+    path292: { source: "290", target: "291" },
+    path293: { source: "291", target: "292" },
+    path294: { source: "284", target: "310" },
+    path295: { source: "292", target: "293" },
+    path296: { source: "293", target: "294" },
+    path297: { source: "294", target: "295" },
+    path298: { source: "295", target: "296" },
+    path299: { source: "296", target: "297" },
+    path300: { source: "297", target: "298" },
+    path301: { source: "298", target: "299" },
+    path302: { source: "299", target: "300" },
+    path303: { source: "300", target: "301" },
+    path304: { source: "293", target: "311" },
+    path306: { source: "301", target: "302" },
+    path307: { source: "302", target: "303" },
+    path308: { source: "303", target: "304" },
+    path309: { source: "11", target: "10" },
+    path310: { source: "153", target: "154" },
+    path311: { source: "157", target: "158" },
+    path312: { source: "311", target: "301" },
+    path313: { source: "305", target: "155" },
+    path314: { source: "162", target: "163" },
+    path315: { source: "148", target: "149" },
+    path316: { source: "21", target: "20" },
+    path317: { source: "33", target: "32" },
+    path318: { source: "43", target: "42" },
+    path319: { source: "55", target: "54" },
+    path320: { source: "65", target: "64" },
+    path321: { source: "77", target: "76" },
+    path322: { source: "87", target: "86" },
+    path323: { source: "99", target: "98" },
+    path324: { source: "109", target: "108" },
+    path325: { source: "114", target: "115" },
+    path326: { source: "194", target: "195" },
+    path327: { source: "208", target: "207" },
+    path328: { source: "306", target: "196" },
+    path329: { source: "218", target: "217" },
+    path330: { source: "119", target: "120" },
+    path331: { source: "189", target: "190" },
+    path332: { source: "186", target: "187" },
+    path333: { source: "122", target: "123" },
+    path334: { source: "230", target: "229" },
+    path335: { source: "240", target: "239" },
+    path336: { source: "127", target: "128" },
+    path337: { source: "181", target: "182" },
+    path338: { source: "307", target: "251" },
+    path339: { source: "130", target: "131" },
+    path340: { source: "178", target: "179" },
+    path341: { source: "308", target: "260" },
+    path342: { source: "137", target: "138" },
+    path343: { source: "173", target: "174" },
+    path344: { source: "309", target: "271" },
+    path345: { source: "170", target: "171" },
+    path346: { source: "140", target: "141" },
+    path347: { source: "310", target: "292" },
+    path348: { source: "281", target: "280" },
+    path349: { source: "145", target: "146" },
+    path350: { source: "165", target: "166" },
+    path351: { source: "163", target: "283" },
+    path352: { source: "282", target: "164" },
+    path353: { source: "171", target: "262" },
+    path354: { source: "261", target: "172" },
+    path355: { source: "179", target: "242" },
+    path356: { source: "241", target: "180" },
+    path357: { source: "187", target: "220" },
+    path358: { source: "219", target: "188" },
+    path359: { source: "136", target: "137" },
+    path360: { source: "131", target: "132" },
+    path122: { source: "155", target: "1" },
+  };
+
+const congestionData = ref([]);
+analysisStore.computedDetectionResult.filter((item) => {
+    for (let i = 0; i < congestionData.value.length; i++) {
+      if (congestionData.value[i].path === item.path) {
+        congestionData.value[i].count += 1;
+        if (congestionData.value[i].count > 5) {
+          congestionData.value[i].level = 2;
+        } else if (congestionData.value[i].count > 10) {
+          congestionData.value[i].level = 3;
+        }
+        return;
+      }
+    }
+    
+    congestionData.value.push({
+      path: item.path,
+      links: [path_link[item.path]],
+      count: 1,
+      level: 1,
+    });
+  });
+if(props.number != 1) {
+  congestionData.value.push({
+        path: "path124",
+        links: [path_link["path124"]],
+        count: 1,
+        level: 1,
+  });
+}
 //로그
 
 const currentTimeText = ref("2024.01.08 13:38:23");
@@ -1584,6 +1978,7 @@ currentTimeText.value = formatTime(ohtLogs.value["simulation-log"][0]["time"]);
 const pathColor = "#B4B4B4";
 const facilityColor = "#292D30";
 const ohtColor = "orange";
+const ohtTextColor = "black"
 
 const container = ref(null);
 const svgContainer = ref(null);
@@ -1706,14 +2101,14 @@ let yScale = d3
 const ohts = [];
 const ohtTexts = [];
 const length = 13; //oht를 표시하는 사각형의 길이
+const congestionPathColor = [
+  "#B4B4B4",
+  "rgba(249, 0, 0, 0.7)",
+  "rgba(249, 0, 0, 0.7)",
+  "rgba(249, 0, 0, 0.7)",
+];
 
 function drawSimulation(width, height) {
-  
-  const tempSvg = d3
-    .select(svgContainer.value)
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
 
   let initialTransform = "";
 
@@ -1734,11 +2129,69 @@ function drawSimulation(width, height) {
     }
   }
 
-  const svg = tempSvg.append("g")
+  const svg = d3
+    .select(svgContainer.value)
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
     .attr("transform", initialTransform);
 
+  var linkSelection = svg.selectAll(".link");
+  // 정체 구간 그리기 - 노드와 링크보다 먼저그려야 위에 표시됨
+
+  for (const congestion of congestionData.value) {
+    
+    const newCongestionLinks = linkSelection
+    .data(congestion.links)
+    .enter()
+    .append("line")
+    .attr("class", "highlight") // 공통 클래스 지정
+    .attr("x1", (d) => xScale(nodes.find((node) => node.id === d.source).x))
+    .attr("y1", (d) => yScale(nodes.find((node) => node.id === d.source).y))
+    .attr("x2", (d) => xScale(nodes.find((node) => node.id === d.target).x))
+    .attr("y2", (d) => yScale(nodes.find((node) => node.id === d.target).y))
+    .attr("stroke", "#ff6666")
+    .attr("stroke-width", 20)
+    .attr("opacity", 0); // 처음엔 투명하게 설정
+
+  // d.source와 d.target 노드 주변에 큰 빨강색 원 그리기
+  const sourceTargetNodes = congestion.links.map(d => [d.source, d.target]).flat();
+  const uniqueNodes = [...new Set(sourceTargetNodes)];
+
+  uniqueNodes.forEach(nodeId => {
+    const node = nodes.find(n => n.id === nodeId);
+    svg // 기존 SVG 선택
+      .append("circle")
+      .attr("class", "highlight") // 공통 클래스 지정
+      .attr("cx", xScale(node.x))
+      .attr("cy", yScale(node.y))
+      .attr("r", 10) // 큰 원 반지름 설정
+      .attr("fill", "#ff6666")
+      .attr("opacity", 0); // 처음엔 투명하게 설정
+  });
+
+
+function animateHighlights() {
+  svg.selectAll(".highlight")
+    .transition() // 애니메이션 시작
+    .duration(2000) // 불투명한 색으로 천천히 변하기까지의 시간 (밀리초 단위)
+    .attr("opacity", 1) // 불투명한 색으로 변함
+    // .transition() // 두번째 애니메이션 시작
+    // .duration(2000) // 투명한 색으로 천천히 변하기까지의 시간 (밀리초 단위)
+    // .attr("opacity", 0) // 다시 투명하게 변함
+    // .on("end", animateHighlights); // 애니메이션 끝난 후 다시 시작
+}
+
+// 애니메이션 시작
+animateHighlights();
+linkSelection = linkSelection.merge(d3.selectAll(".highlight"));
+  }
+
+  
+  
   // 노드와 링크 그리기
-  svg
+  const newLinks = svg
     .selectAll(".link")
     .data(links)
     .enter()
@@ -1749,8 +2202,9 @@ function drawSimulation(width, height) {
     .attr("x2", (d) => xScale(nodes.find((node) => node.id === d.target).x))
     .attr("y2", (d) => yScale(nodes.find((node) => node.id === d.target).y))
     .attr("stroke", pathColor);
+    linkSelection = linkSelection.merge(newLinks);
 
-  svg
+  const curveLinks = svg
     .selectAll(".curvedLink")
     .data(curvedLinks)
     .enter()
@@ -1784,6 +2238,9 @@ function drawSimulation(width, height) {
     })
     .attr("stroke", pathColor)
     .attr("fill", "none");
+  
+  linkSelection = linkSelection.merge(curveLinks);
+
 
   const nodeGroup = svg
     .selectAll(".node")
@@ -1818,9 +2275,6 @@ function drawSimulation(width, height) {
       i < ohtLogs.value["simulation-log"][0]["data"].length;
       i++
     ) {
-      // if (excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"])) {
-      //   continue;
-      // }
       const point = svg
         .append("rect")
         .attr("width", length)
@@ -1849,6 +2303,12 @@ function drawSimulation(width, height) {
         .attr("fill", excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]) ? "white" : ohtColor)
         .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
         
+      if (!(excludeIds.includes(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]) && props.number == 1)) {
+        point.attr("stroke", "#545454") // 테두리 색상
+        .attr("stroke-width", 0.5) // 테두리 두께
+        .attr("stroke-dasharray", "4 2") // 점선 패턴
+        .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
+      }
       const ohtId = svg
         .append("text")
         .attr(
@@ -1872,13 +2332,13 @@ function drawSimulation(width, height) {
         .attr("font-size", 7)
         .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
 
-      if (
-        ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"] ===
-        props.errorData["cause-oht"]
-      ) {
-        point.attr("stroke", "#AD29B6").attr("stroke-width", 2);
-        ohtId.attr("fill", "#AD29B6").attr("font-weight", 10);
-      }
+      // if (
+      //   ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"] ===
+      //   props.errorData["cause-oht"]
+      // ) {
+      //   point.attr("stroke", "#AD29B6").attr("stroke-width", 2);
+      //   ohtId.attr("fill", "#AD29B6").attr("font-weight", 10);
+      // }
 
       // 생성된 원을 배열에 추가합니다.
       ohts.push(point);
@@ -1920,37 +2380,37 @@ function movePoint(currentTime) {
       });
 
     if (currentOht["status"] === "W") {
-      ohtTexts[idx].attr("fill", "#F27A16");
+      ohtTexts[idx].attr("fill", ohtTextColor);
       point.attr("fill", "#F27A16");
     } else {
       if(props.number == 1) {
-        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "white" : ohtColor)
-        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "#FFFFFF" : ohtColor)  
+        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) && props.number == 1 ? "white" : ohtTextColor)
+        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) && props.number == 1 ? "#FFFFFF" : ohtColor)  
       } else {
-        ohtTexts[idx].attr("fill", ohtColor)
+        ohtTexts[idx].attr("fill", ohtTextColor)
         point.attr("fill", ohtColor)
       }
     }
 
     if (currentOht["status"] !== "W" && currentOht["error"] === 0) {
       if(props.number == 1) {
-        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "white" : ohtColor)
-        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) ? "#FFFFFF" : ohtColor)  
+        ohtTexts[idx].attr("fill", excludeIds.includes(currentOht["oht-id"]) && props.number == 1 ? "white" : ohtTextColor)
+        point.attr("fill", excludeIds.includes(currentOht["oht-id"]) && props.number == 1 ? "#FFFFFF" : ohtColor)  
       } else {
-        ohtTexts[idx].attr("fill", ohtColor)
+        ohtTexts[idx].attr("fill", ohtTextColor)
         point.attr("fill", ohtColor)
       }
     } else if (currentOht["status"] !== "W" && currentOht["error"] === 200) {
       ohtTexts[idx].attr("fill", "red");
       point.attr("fill", "red");
     } else if (currentOht["error"] === 300) {
-      ohtTexts[idx].attr("fill", "blue");
+      ohtTexts[idx].attr("fill", "black");
       point.attr("fill", "blue");
     }
 
-    if (currentOht["oht-id"] === props.errorData["cause-oht"]) {
-      ohtTexts[idx].attr("fill", "#AD29B6");
-    }
+    // if (currentOht["oht-id"] === props.errorData["cause-oht"]) {
+    //   ohtTexts[idx].attr("fill", "#AD29B6");
+    // }
 
     point
       .transition()
