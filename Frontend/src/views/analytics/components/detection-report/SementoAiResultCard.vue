@@ -97,6 +97,7 @@ onMounted(async () => {
         <CongestionSimulation
           class="simulation"
           :errorData="detectionResult[props.number - 1]"
+          :number="props.number"
         />
         <div class="table">
           <Table
