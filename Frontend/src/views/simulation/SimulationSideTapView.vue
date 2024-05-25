@@ -93,14 +93,14 @@ defineExpose({
           header-color="white"
           header-text-color="black"
           :columns="[
-            'TIME',
-            'OHT ID',
-            'PATH',
-            'STATUS',
-            'CARRIER',
-            'ERROR',
-            'SPEED',
-            'IS_FAIL',
+            '시간',
+            'OHT 호기',
+            '경로',
+            '상태',
+            '물류 적재여부',
+            '에러',
+            '속도',
+            '작업 성공여부',
           ]"
           :data="datas"
         ></Table>
@@ -122,6 +122,8 @@ defineExpose({
 .background {
   background-color: #f3f2f7;
   width: 100%;
+  z-index: 5;
+  /* position: fixed; */
 }
 .container {
   /* background-color: azure; */

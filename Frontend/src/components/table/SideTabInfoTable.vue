@@ -113,6 +113,15 @@ onUnmounted(() => {
 defineExpose({
   checkPropsChange,
 });
+
+function formatCellContent(column, cell) {
+  if (column === "작업 성공여부") {
+    return cell ? "성공" : "실패";
+  } else if (column === "물류 적재여부") {
+    return cell ? "적재" : "없음";
+  }
+  return cell;
+}
 </script>
 
 <template>
@@ -163,18 +172,18 @@ defineExpose({
           >
             <div
               :class="{
-                'error-cell': columns[columnIndex] === 'ERROR' && cell != 0,
-                'status-cell': columns[columnIndex] === 'STATUS',
+                'error-cell': columns[columnIndex] === '에러' && cell != 0,
+                'status-cell': columns[columnIndex] === '상태',
               }"
             >
               <div
-                v-if="columns[columnIndex] !== 'ERROR' || cell !== 0"
+                v-if="columns[columnIndex] !== '에러' || cell !== 0"
                 class="inner-content"
                 :class="{
-                  'no-error': columns[columnIndex] === 'ERROR' && cell === 0,
+                  'no-error': columns[columnIndex] === '에러' && cell === 0,
                 }"
               >
-                {{ cell }}
+                {{ formatCellContent(columns[columnIndex], cell) }}
               </div>
             </div>
           </td>

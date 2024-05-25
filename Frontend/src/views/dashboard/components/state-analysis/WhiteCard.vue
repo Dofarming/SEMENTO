@@ -30,12 +30,12 @@ const props = defineProps({
   },
   height: {
     type: String,
-    default: "150px"
-  }
+    default: "150px",
+  },
 });
 </script>
 <template>
-  <div class="card-container" :style="{ width: width, height: height}">
+  <div class="card-container" :style="{ width: width, height: height }">
     <div class="card-title">
       <font-awesome-icon
         :icon="['fas', 'circle']"
@@ -71,7 +71,7 @@ const props = defineProps({
 
 .card-title > div {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .card-content-container {
@@ -82,7 +82,7 @@ const props = defineProps({
 }
 
 .card-content {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   color: #6f7277;
 }

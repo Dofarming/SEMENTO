@@ -5,6 +5,8 @@ import Loading from "@/components/loading/Loading.vue";
 import SideBar from "@/components/sideBar/SideBar.vue";
 import Header from "@/components/header/Header.vue";
 import AppFloatingAlert from "@/views/alert/AppFloatingAlert.vue";
+import AIAppFloatingAlert from "./views/alert/AIAppFloatingAlert.vue";
+
 const isAuthenticated = ref(false);
 if (isAuthenticated.value == false) confirm();
 function confirm() {
@@ -27,6 +29,7 @@ function confirm() {
       <RouterView />
     </div>
     <AppFloatingAlert />
+    <AIAppFloatingAlert />
   </div>
 </template>
 

@@ -233,8 +233,8 @@ function toggleSidePageHandler(data) {
             <SideTabTable
               class="table-component"
               width="100%"
-              bodyFontSize="14px"
-              headerFontSize="12px"
+              bodyFontSize="17px"
+              headerFontSize="17px"
               @toggle-side-page="toggleSidePageHandler"
               :columns="[
                 '번호',

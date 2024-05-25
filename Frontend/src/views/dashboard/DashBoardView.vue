@@ -535,6 +535,7 @@ const formatNumber = (value) => {
   transition: right 0.5s;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.09);
   overflow: scroll;
+  z-index: 2;
 }
 
 .side-page.open {

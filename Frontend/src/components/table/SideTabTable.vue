@@ -166,14 +166,14 @@ function formatCellContent(column, cell) {
           >
             <div
               :class="{
-                'error-cell': columns[columnIndex] === 'ERROR',
-                'status-cell': columns[columnIndex] === 'STATUS',
+                'error-cell': columns[columnIndex] === '에러',
+                'status-cell': columns[columnIndex] === '상태',
               }"
             >
               <div
                 class="inner-content"
                 :class="{
-                  'no-error': columns[columnIndex] === 'ERROR' && cell === '',
+                  'no-error': columns[columnIndex] === '에러' && cell === '',
                 }"
               >
                 {{ formatCellContent(columns[columnIndex], cell) }}
@@ -205,12 +205,12 @@ function formatCellContent(column, cell) {
         bodyFontSize="14px"
         headerFontSize="12px"
         :columns="[
-          'No.',
-          'Period',
-          'Time Taken',
-          'ERROR',
-          'Average Speed',
-          'Out of DeadLine',
+          '번호',
+          '기간',
+          '소요 시간',
+          '에러',
+          '평균 속도',
+          '작업 성공여부',
         ]"
         :data="tableData"
       >
@@ -230,6 +230,7 @@ function formatCellContent(column, cell) {
   transition: right 0.5s;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.09);
   overflow: scroll;
+  z-index: 2;
 }
 
 .side-page.open {
@@ -246,11 +247,12 @@ table {
 th.table-header {
   padding: 10px;
   text-align: center;
-  /* background-color: #000000bd; */
   color: white;
   font-weight: 600;
-  /* font-size: 19px; */
   border-bottom: #e7e7ed 1px solid;
+  position: sticky;
+  top: 0; /* 화면 상단에 고정 */
+  z-index: 1; /* 다른 내용보다 위에 표시 */
 }
 th.first-th {
   border-top-left-radius: 5px; /* 첫 번째 th에 왼쪽 둥근 모서리 적용 */
@@ -263,9 +265,7 @@ th.last-th {
 td.table-cell {
   padding: 10px;
   text-align: center;
-  /* background-color: white; */
   color: black;
-  /* font-size: 15px; */
   font-weight: 200;
 }
 td.table-cell div.error-cell {
