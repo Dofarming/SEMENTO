@@ -158,7 +158,7 @@ function toggleSidePageHandler(data) {
           <div class="white-box barchart-box">
             <section class="title">
               <Cardhead
-                headerText="작업량 평균 비교"
+                headerText="생산량 평균 비교"
                 contentText="동시간대 전체 OHT작업량과 시간별 평균을 비교합니다"
               ></Cardhead>
             </section>
@@ -177,7 +177,7 @@ function toggleSidePageHandler(data) {
           <div class="black-card-box">
             <div class="black-card-content">
               <BlackDataCard
-                title="총 작업량"
+                title="총 생산량"
                 :content="simulationStore().totalWork.data"
                 :percentage="simulationStore().totalWork.percent + '%'"
                 :fontColor="
@@ -225,8 +225,8 @@ function toggleSidePageHandler(data) {
         <div class="white-box log-table-box">
           <section class="title">
             <Cardhead
-              :headerText="'총 작업 로그(' + simulationStore().totalCnt + '건)'"
-              contentText="각 작업을 클릭하여 해당하는 로그를 시뮬레이션과 함께 확인하실 수 있습니다."
+              :headerText="'총 생산 로그(' + simulationStore().totalCnt + '건)'"
+              contentText="각 생산 현황을 클릭하여 해당하는 로그를 시뮬레이션과 함께 확인하실 수 있습니다."
             />
           </section>
           <section class="table-container">
@@ -237,12 +237,12 @@ function toggleSidePageHandler(data) {
               headerFontSize="12px"
               @toggle-side-page="toggleSidePageHandler"
               :columns="[
-                'No.',
-                'Period',
-                'Time Taken',
-                'ERROR',
-                'Average Speed',
-                'Out of DeadLine',
+                '번호',
+                '기간',
+                '걸린 시간',
+                '에러',
+                '평균 속도',
+                '작업 성공여부',
               ]"
               :data="simulationStore().logPerWork"
               :ohtId="simulationStore().ohtId"

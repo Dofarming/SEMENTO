@@ -15,7 +15,7 @@ function setActive(item, path) {
   <div class="side-bar-container">
     <div class="logo-container">
       <div class="logo">Semento<span class="logo-dot">.</span></div>
-      <div class="logo-subheading">OHT AI-Analytics System</div>
+      <div class="logo-subheading">OHT AI-분석 시스템</div>
     </div>
     <div class="nav-bar-container">
       <div
@@ -92,7 +92,8 @@ function setActive(item, path) {
 
 .logo-subheading {
   padding-top: 3%;
-  color: #b9bbbd;
+  color: #d3d6d6;
+  font-size: 20px;
 }
 
 .dashboard-container {

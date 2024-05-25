@@ -44,7 +44,7 @@ function confirm() {
 #side-bar {
   height: 100%;
   width: 17.5%;
-  background-color: black;
+  background-color: rgb(35, 35, 35);
   position: fixed;
   top: 0;
   left: 0;

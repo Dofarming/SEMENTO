@@ -34,11 +34,11 @@ section {
 h1 {
   font-weight: 700;
   color: #464255;
-  font-size: 19px;
+  font-size: 23px;
 }
 p {
   font-weight: 500;
-  color: #b9bbbd;
-  font-size: 15px;
+  color: #7e838e;
+  font-size: 16px;
 }
 </style>

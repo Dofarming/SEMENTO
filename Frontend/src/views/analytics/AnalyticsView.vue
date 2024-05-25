@@ -172,7 +172,7 @@ const handleAIDetectionButton = async () => {
       (new Date(result["end-date"]) - new Date(result["start-date"])) / 1000;
   });
   analysisStore.nowLoading = false;
-  notificationStore.sendNotification(); // 알림 띄우기
+  notificationStore.sendNotification(); // 알림 띄우기ㅊ
 };
 
 onMounted(async () => {});
@@ -211,7 +211,7 @@ onMounted(async () => {});
     <div class="results" v-else>
       <section class="header">
         <!--제목 -->
-        <HeadText header-text="# Summary" />
+        <HeadText header-text="# AI 분석 요약" />
         <Text :text="summaryText" />
       </section>
 
@@ -231,7 +231,7 @@ onMounted(async () => {});
         <div class="white-box error-chart-box">
           <section class="title">
             <Cardhead
-              headerText="Error Chart"
+              headerText="정체 원인 비율"
               contentText="탐지된 정체 상황들의 AI 분석 결과 비율입니다."
             ></Cardhead>
           </section>
@@ -245,7 +245,7 @@ onMounted(async () => {});
           <div class="white-box">
             <section class="title">
               <Cardhead
-                headerText="Congestion Time"
+                headerText="정체 시간"
                 contentText="기간동안 소요된 총 정체시간 입니다."
               ></Cardhead>
             </section>
@@ -261,7 +261,7 @@ onMounted(async () => {});
           <div class="white-box duration-chart-box">
             <section class="title">
               <Cardhead
-                headerText="Duration Time Chart"
+                headerText="정체별 소요 시간"
                 contentText="각 정체 상황별 소요시간 그래프입니다."
               ></Cardhead>
             </section>

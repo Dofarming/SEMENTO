@@ -110,6 +110,13 @@ onUnmounted(() => {
     observer.value.unobserve(sentinel.value);
   }
 });
+
+function formatCellContent(column, cell) {
+  if (column === "작업 성공여부") {
+    return cell ? "성공" : "실패";
+  }
+  return cell;
+}
 </script>
 
 <template>
@@ -169,7 +176,7 @@ onUnmounted(() => {
                   'no-error': columns[columnIndex] === 'ERROR' && cell === '',
                 }"
               >
-                {{ cell }}
+                {{ formatCellContent(columns[columnIndex], cell) }}
               </div>
             </div>
           </td>

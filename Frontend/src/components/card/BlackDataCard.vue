@@ -38,7 +38,6 @@ const props = defineProps({
     default: "377px",
   },
 });
-
 </script>
 
 <template>
@@ -61,7 +60,7 @@ const props = defineProps({
 
 <style scoped>
 .card-container {
-  background-color: black;
+  background-color: rgb(35, 35, 35);
   color: white;
   border-radius: 5px;
   padding: 25px 20px;
@@ -81,7 +80,7 @@ const props = defineProps({
 }
 
 .card-content {
-  color: #F3F3F3;
+  color: #f3f3f3;
   font-size: 1.3rem;
   font-weight: bold;
 }

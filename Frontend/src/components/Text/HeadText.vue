@@ -23,6 +23,6 @@ const props = defineProps({
 h1 {
   font-weight: 700;
   color: #222222;
-  font-size: 20px;
+  font-size: 25px;
 }
 </style>

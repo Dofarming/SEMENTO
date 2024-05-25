@@ -107,14 +107,14 @@ onMounted(async () => {
             headerColor="white"
             headerTextColor="black"
             :columns="[
-              'TIME',
-              'OHT ID',
-              'PATH',
-              'STATUS',
-              'CARRIER',
-              'ERROR',
-              'SPEED',
-              'IS_FAIL',
+              '시간',
+              'OHT호기',
+              '경로',
+              'OHT 상태',
+              '물류 적재여부',
+              '에러',
+              'OHT 속도',
+              '작업 성공여부',
             ]"
             :data="datas"
           />
@@ -166,11 +166,13 @@ onMounted(async () => {
   background-color: #003cb0;
   color: white;
   width: 50%;
+  font-size: 20px;
 }
 .white {
   color: #003cb0;
   background-color: white;
   width: 50%;
+  font-size: 20px;
 }
 .title {
   margin-left: 23px;

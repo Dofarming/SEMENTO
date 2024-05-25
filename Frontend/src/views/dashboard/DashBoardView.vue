@@ -18,7 +18,9 @@ import LineChart from "./components/state-analysis/LineChart.vue";
 
 // vue
 import { useDashboardStore } from "@/stores/dashboard";
+import { useAISolutionNotificationStore } from "@/stores/ainotification";
 const dashboardStore = useDashboardStore();
+const AISolutionNotificationStore = useAISolutionNotificationStore();
 import { onMounted, watch, ref } from "vue";
 import { timeout } from "d3";
 
@@ -97,6 +99,7 @@ function handleButton() {
     setTimeout(() => {
       buttonLoading.value = false;
       buttonLoadDone.value = true;
+      AISolutionNotificationStore.sendAISolutionNotification(); // 알림 띄우기
       // buttonClick.value = !buttonClick.value;
     }, 2000);
   } else {
@@ -236,7 +239,7 @@ const formatNumber = (value) => {
               :height="'130px'"
             />
             <BlackDataCard
-              title="총 작업량"
+              title="총 생산량"
               :content="
                 dashboardStore.ohtJobAnalysisData['total-work'].data + ' 건'
               "
@@ -254,7 +257,7 @@ const formatNumber = (value) => {
               :height="'130px'"
             />
             <BlackDataCard
-              title="OHT 한달 평균 작업량"
+              title="OHT 한달 평균 생산량"
               :content="
                 formatNumber(
                   dashboardStore.ohtJobAnalysisData['average-work'].data
@@ -316,7 +319,7 @@ const formatNumber = (value) => {
             <div class="padding-left-20">
               <Table
                 width="100%"
-                :columns="['No.', 'OHT ID', 'ERROR', 'COUNT']"
+                :columns="['번호', 'OHT 호기', '에러', '개수']"
                 :data="errorLog"
               />
             </div>
@@ -336,7 +339,7 @@ const formatNumber = (value) => {
               :height="'130px'"
             />
             <BlackDataCard
-              title="평균 작업 시간"
+              title="평균 생산 시간"
               :content="averageWork"
               :percentage="
                 formatNumber(
@@ -384,7 +387,7 @@ const formatNumber = (value) => {
             </div>
             <div class="row" style="width: 100%">
               <WhiteCard
-                title="작업이 가장 많은 시간대"
+                title="생산량이 가장 많은 시간대"
                 :startTime="maxJobTime.startTime"
                 :endTime="maxJobTime.endTime"
                 width="33%"
