@@ -45,6 +45,7 @@ function splitText(text) {
           <font-awesome-icon
             :icon="['fas', 'triangle-exclamation']"
             size="lg"
+            style="color: red"
           />
           <span class="problem-sentence"
             >현재 작업 성공률이 40.17%로 매우 낮습니다.</span
@@ -81,11 +82,12 @@ function splitText(text) {
           <font-awesome-icon
             :icon="['fas', 'triangle-exclamation']"
             size="lg"
+            style="color: red"
           />
           <span class="problem-sentence">
-            모든 실패 작업이 에러로 인해 발생합니다. OHT 에러 {{ error200 }}건,
-            설비 에러 {{ error300 }}건으로 OHT 에러와 설비 에러가
-            주요원인입니다.</span
+            모든 실패 작업이 에러로 인해 발생합니다. OHT 에러
+            {{ error200 }}건, 설비 에러 {{ error300 }}건으로 OHT 에러와 설비
+            에러가 주요원인입니다.</span
           >
         </div>
         <div class="solution-content">
@@ -117,6 +119,7 @@ function splitText(text) {
           <font-awesome-icon
             :icon="['fas', 'triangle-exclamation']"
             size="lg"
+            style="color: red"
           />
           <span class="problem-sentence"
             >00:00 - 01:00 시간대에 작업이 활발하면서 동시에 유휴 상태가 많은
@@ -152,6 +155,7 @@ function splitText(text) {
           <font-awesome-icon
             :icon="['fas', 'triangle-exclamation']"
             size="lg"
+            style="color: red"
           />
           <span class="problem-sentence"
             >OHT 당 평균 작업량이 낮고, 일부 시간대에 유휴 상태가 많이
@@ -166,7 +170,7 @@ function splitText(text) {
           />
           <div class="solution-sentence">
             <span
-              v-for="(line, index) in splitText(idleContentText)"
+              v-for="(line, index) in splitText(ohtContentText)"
               :key="index"
             >
               {{ line }}<br />
@@ -178,19 +182,49 @@ function splitText(text) {
 
     <div class="section">
       <Cardhead header-text="결론" contentText="" class="ai-solution-head" />
-      <p>
-        위의 문제점 및 솔루션을 바탕으로 다음과 같은 액션 플랜을 제시합니다:
-      </p>
-      <ul>
-        <li>AI 기반 예측 및 최적화 시스템 도입.</li>
-        <li>에러 코드 분석 및 대응 방안 마련.</li>
-        <li>작업 및 유휴 시간대 조정을 통한 효율성 향상.</li>
-        <li>OHT 활용률 최적화를 위한 동적 배치 시스템 구축.</li>
-      </ul>
-      <p>
-        이를 통해 작업 성공률을 높이고, 에러율을 감소시키며, 전체적인 OHT 운영
-        효율성을 크게 향상시킬 수 있을 것입니다.
-      </p>
+      <div class="result-content">
+        <div class="result-solution">
+          <font-awesome-icon
+            :icon="['fas', 'lightbulb']"
+            size="lg"
+            style="color: #ffd43b"
+          />
+          <div class="result-sentence">
+            위의 문제점 및 솔루션을 바탕으로 다음과 같은 액션 플랜을 제시합니다
+          </div>
+        </div>
+        <div>
+          <div class="result-content-sentence">
+            <ul>
+              <div class="result-content-sentence-each">
+                <li>AI 기반 예측 및 최적화 시스템 도입</li>
+              </div>
+              <div class="result-content-sentence-each">
+                <li>에러 코드 분석 및 대응 방안 마련</li>
+              </div>
+              <div class="result-content-sentence-each">
+                <li>작업 및 유휴 시간대 조정을 통한 효율성 향상</li>
+              </div>
+              <div class="result-content-sentence-each">
+                <li>OHT 활용률 최적화를 위한 동적 배치 시스템 구축</li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result-result-content">
+        <div class="result-result">
+          <font-awesome-icon
+            :icon="['fas', 'brain']"
+            size="lg"
+            style="color: #f0b094"
+          />
+          <div class="result-result-sentence">
+            이를 통해 작업 성공률을 높이고, 에러율을 감소시키며, 전체적인 OHT
+            운영 효율성을 크게 향상시킬 수 있을 것입니다.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -210,8 +244,8 @@ function splitText(text) {
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
   margin-top: 10px;
 }
 
@@ -219,21 +253,41 @@ function splitText(text) {
   margin-bottom: 10px;
 }
 
-.problem-solution h3 {
-  margin-bottom: 5px;
-}
-
 .ai-solution-head {
   margin: 0;
 }
 
 .problem-content {
-  padding: 10px 0 0 0;
+  margin-top: 10px;
+  padding: 15px 10px 15px 15px;
   white-space: pre-wrap;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px;
 }
 .solution-content {
-  padding: 10px 0 0 0;
+  margin-top: 10px;
+  padding: 15px 10px 15px 15px;
   white-space: pre-wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px;
+}
+
+.result-content {
+  padding: 15px 10px 15px 15px;
+  background-color: rgb(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px;
+}
+
+.result-solution {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -245,5 +299,38 @@ function splitText(text) {
 
 .problem-sentence {
   margin-left: 10px;
+}
+
+.result-sentence {
+  margin-left: 10px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.result-content-sentence {
+  padding: 10px 0px 10px 10px;
+}
+
+.result-result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.result-result-sentence {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.result-content-sentence-each {
+  padding: 3px 0;
+}
+
+.result-result-content {
+  padding: 15px 10px 15px 15px;
+  background-color: rgb(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px;
 }
 </style>
