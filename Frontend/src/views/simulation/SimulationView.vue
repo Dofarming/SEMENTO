@@ -124,7 +124,7 @@ function toggleSidePageHandler(data) {
         </div>
         <Button
           @click="handleSimulationButton"
-          title="Simulation"
+          title="시작하기"
           backgroundColor="black"
           fontColor="white"
         />
@@ -140,7 +140,7 @@ function toggleSidePageHandler(data) {
         <div class="white-box simulation-box">
           <section class="title">
             <Cardhead
-              headerText="Simulation"
+              headerText="시뮬레이션"
               :contentText="`${transformatDate(
                 simulationStore().startDate
               )} - ${transformatDate(simulationStore().endDate)} 기간동안 ${

@@ -1,14 +1,27 @@
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 const activeItem = ref("");
 const router = useRouter();
+const route = useRoute();
 
 function setActive(item, path) {
   activeItem.value = item;
   router.push(path);
 }
+
+onMounted(() => {
+  // 현재 경로를 확인하여 activeItem을 설정
+  const currentPath = route.path;
+  if (currentPath.startsWith("/")) {
+    activeItem.value = "dashboard";
+  } else if (currentPath.startsWith("/analytics")) {
+    activeItem.value = "analytics";
+  } else if (currentPath.startsWith("/simulation")) {
+    activeItem.value = "simulation-logs";
+  }
+});
 </script>
 
 <template>

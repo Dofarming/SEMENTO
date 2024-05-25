@@ -118,23 +118,23 @@ onMounted(async () => {
   // 상태 분석 데이터 전처리
   deadline.value =
     Math.floor(dashboardStore.stateAnalysisData["deadline"].data / 60) +
-    "m " +
+    "분 " +
     (dashboardStore.stateAnalysisData["deadline"].data % 60) +
-    "s";
+    "초";
   averageWork.value =
     Math.floor(
       dashboardStore.stateAnalysisData["average-work-time"].data / 60
     ) +
-    "m " +
+    "분 " +
     (dashboardStore.stateAnalysisData["average-work-time"].data % 60) +
-    "s";
+    "초";
   averageIdle.value =
     Math.floor(
       dashboardStore.stateAnalysisData["average-idle-time"].data / 60
     ) +
-    "m " +
+    "분 " +
     (dashboardStore.stateAnalysisData["average-idle-time"].data % 60) +
-    "s";
+    "초";
 
   // 상태 시간대 분석 데이터 전처리
   timeDataFormatting(
