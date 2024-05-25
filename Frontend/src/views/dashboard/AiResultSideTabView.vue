@@ -54,8 +54,8 @@ function splitText(text) {
         <div class="solution-content">
           <div>
             <font-awesome-icon
-              :icon="['fas', 'hand-point-up']"
-              size="xl"
+              :icon="['fas', 'book-open']"
+              size="lg"
               style="color: #74c0fc"
             />
           </div>
@@ -92,8 +92,8 @@ function splitText(text) {
         </div>
         <div class="solution-content">
           <font-awesome-icon
-            :icon="['fas', 'hand-point-up']"
-            size="xl"
+            :icon="['fas', 'book-open']"
+            size="lg"
             style="color: #74c0fc"
           />
           <div class="solution-sentence">
@@ -128,8 +128,8 @@ function splitText(text) {
         </div>
         <div class="solution-content">
           <font-awesome-icon
-            :icon="['fas', 'hand-point-up']"
-            size="xl"
+            :icon="['fas', 'book-open']"
+            size="lg"
             style="color: #74c0fc"
           />
           <div class="solution-sentence">
@@ -164,8 +164,8 @@ function splitText(text) {
         </div>
         <div class="solution-content">
           <font-awesome-icon
-            :icon="['fas', 'hand-point-up']"
-            size="xl"
+            :icon="['fas', 'book-open']"
+            size="lg"
             style="color: #74c0fc"
           />
           <div class="solution-sentence">
