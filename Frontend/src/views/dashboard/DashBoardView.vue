@@ -224,7 +224,7 @@ const formatNumber = (value) => {
     <div class="container col gap-40">
       <!-- 작업 분석 -->
       <div class="col">
-        <HeadText header-text="# Job Analysis" />
+        <HeadText header-text="# 작업 분석" />
         <!-- 작업 분석 - 시간대별 작업량 -->
         <div class="container-item row gap-20">
           <div class="col">
@@ -327,7 +327,7 @@ const formatNumber = (value) => {
 
       <!-- 상태 분석 -->
       <div class="col">
-        <HeadText header-text="# State Analysis" />
+        <HeadText header-text="# 상태 분석" />
         <div class="container-item row gap-20">
           <div class="col">
             <BlackDataCard
