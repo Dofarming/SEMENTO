@@ -18,11 +18,11 @@ const route = useRoute();
 watch(route, (currentRoute) => {
   // 라우트의 이름이 'dashboard'이면 pageTitle을 'dashboard'로 설정
   if (currentRoute.name === "dashboard") {
-    pageTitle.value = "Dashboard";
+    pageTitle.value = "대시보드";
   } else if (currentRoute.name === "analytics") {
-    pageTitle.value = "Analytics";
+    pageTitle.value = "AI 분석";
   } else if (currentRoute.name === "simulation") {
-    pageTitle.value = "Simulation";
+    pageTitle.value = "시뮬레이션";
   }
 });
 

@@ -30,7 +30,7 @@ function setActive(item, path) {
         <span
           class="dashboard-word"
           :style="activeItem === 'dashboard' ? 'font-weight: bold; ' : ''"
-          >Dashboard</span
+          >대시보드</span
         >
       </div>
       <div
@@ -48,7 +48,7 @@ function setActive(item, path) {
         <span
           class="analytics-word"
           :style="activeItem === 'analytics' ? 'font-weight: bold; ' : ''"
-          >Analytics</span
+          >AI 분석</span
         >
       </div>
       <div
@@ -66,7 +66,7 @@ function setActive(item, path) {
         <span
           class="simulation-log-word"
           :style="activeItem === 'simulation-logs' ? 'font-weight: bold; ' : ''"
-          >Simulation Logs</span
+          >시뮬레이션</span
         >
       </div>
     </div>
