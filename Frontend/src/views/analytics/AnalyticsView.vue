@@ -212,7 +212,15 @@ onMounted(async () => {});
       <section class="header">
         <!--제목 -->
         <HeadText header-text="# AI 분석 요약" />
-        <Text :text="summaryText" />
+        <div class="summaryText-container">
+          <p>
+            <span class="summaryText-bold"
+              >{{ formattedStartDate }} ~ {{ formattedEndDate }}</span
+            >
+            기간동안 총 <span class="summaryText-bold">{{ cnt }}개</span>의
+            정체가 감지되었습니다.
+          </p>
+        </div>
       </section>
 
       <section class="result">
@@ -231,8 +239,8 @@ onMounted(async () => {});
         <div class="white-box error-chart-box">
           <section class="title">
             <Cardhead
-              headerText="정체 원인 비율"
-              contentText="탐지된 정체 상황들의 AI 분석 결과 비율입니다."
+              headerText="탐지된 정체 원인"
+              contentText="탐지된 정체 상황들의 AI 분석 결과입니다."
             ></Cardhead>
           </section>
           <div class="error-chart">
@@ -428,5 +436,9 @@ onMounted(async () => {});
   flex-direction: row;
   justify-content: flex-end;
   padding: 0 20px;
+}
+
+.summaryText-bold {
+  font-weight: bold;
 }
 </style>

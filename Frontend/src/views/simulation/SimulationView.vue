@@ -102,7 +102,7 @@ function toggleSidePageHandler(data) {
     <!-- 설명 및 검색창 -->
     <section class="input">
       <Text2
-        text="개별이송체의 시스템로그를 통해 시뮬레이션과 분석결과를 받아보세요."
+        text="각 OHT의 시스템로그를 통해 시뮬레이션과 분석결과를 받아보세요."
       />
       <div class="input-data">
         <SearchInput
@@ -178,7 +178,7 @@ function toggleSidePageHandler(data) {
             <div class="black-card-content">
               <BlackDataCard
                 title="총 생산량"
-                :content="simulationStore().totalWork.data"
+                :content="simulationStore().totalWork.data + ' 건'"
                 :percentage="simulationStore().totalWork.percent + '%'"
                 :fontColor="
                   simulationStore().totalWork.percent >= 0 ? 'red' : 'blue'
@@ -188,7 +188,7 @@ function toggleSidePageHandler(data) {
               />
               <BlackDataCard
                 title="데드라인 초과"
-                :content="simulationStore().outOfDeadline.data"
+                :content="simulationStore().outOfDeadline.data + ' 건'"
                 :percentage="simulationStore().outOfDeadline.percent + '%'"
                 :fontColor="
                   simulationStore().outOfDeadline.percent >= 0 ? 'red' : 'blue'
@@ -200,7 +200,7 @@ function toggleSidePageHandler(data) {
             <div class="black-card-content">
               <BlackDataCard
                 title="평균 속도"
-                :content="simulationStore().averageSpeed.data"
+                :content="simulationStore().averageSpeed.data + ' m/s'"
                 :percentage="simulationStore().averageSpeed.percent + '%'"
                 :fontColor="
                   simulationStore().averageSpeed.percent >= 0 ? 'red' : 'blue'
@@ -210,7 +210,7 @@ function toggleSidePageHandler(data) {
               />
               <BlackDataCard
                 title="OHT 에러"
-                :content="simulationStore().ohtError.data"
+                :content="simulationStore().ohtError.data + ' 건'"
                 :percentage="simulationStore().ohtError.percent + '%'"
                 :fontColor="
                   simulationStore().ohtError.percent >= 0 ? 'red' : 'blue'

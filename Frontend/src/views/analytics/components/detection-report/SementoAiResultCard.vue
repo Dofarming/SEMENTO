@@ -108,7 +108,7 @@ onMounted(async () => {
             headerTextColor="black"
             :columns="[
               '시간',
-              'OHT호기',
+              'OHT 호기',
               '경로',
               'OHT 상태',
               '물류 적재여부',
