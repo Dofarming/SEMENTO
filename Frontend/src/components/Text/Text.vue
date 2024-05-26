@@ -23,7 +23,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "18px",
+    default: "22px",
   },
 });
 </script>
@@ -52,7 +52,7 @@ const props = defineProps({
 .tag {
   color: #003cb0;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
 }
 .content {
   margin-left: 5px;
