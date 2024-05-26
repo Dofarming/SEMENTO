@@ -1,22 +1,22 @@
 {
     "job-result-ratio": {
-        "total-work": 4874,
-        "success-work": 3944,
-        "failed-work": 930,
-        "success-percentage": 80.91916290521132,
-        "failed-percentage": 19.080837094788674
+        "total-work": 5056,
+        "success-work": 4226,
+        "failed-work": 830,
+        "success-percentage": 83.58386075949367,
+        "failed-percentage": 16.41613924050633
     },
     "job-result-error": {
-        "total-error": 103,
-        "oht-error": 60,
-        "facility-error": 43,
-        "oht-error-percentage": 58.252427184466015,
-        "facility-error-percentage": 41.74757281553398
+        "total-error": 72,
+        "oht-error": 25,
+        "facility-error": 47,
+        "oht-error-percentage": 34.722222222222222,
+        "facility-error-percentage": 65.277777777777778
     },
     "job-result-error-log": [
         {
-            "oht-id": 5213,
-            "error": 200,
+            "oht-id": 2592,
+            "error": 300,
             "count": 2
         },
         {
@@ -25,7 +25,7 @@
             "count": 1
         },
         {
-            "oht-id": 5226,
+            "oht-id": 2613,
             "error": 300,
             "count": 1
         },
@@ -33,6 +33,11 @@
             "oht-id": 2604,
             "error": 200,
             "count": 2
+        },
+        {
+            "oht-id": 2597,
+            "error": 300,
+            "count": 1
         },
         {
             "oht-id": 2591,
@@ -60,12 +65,12 @@
             "count": 1
         },
         {
-            "oht-id": 5227,
+            "oht-id": 2591,
             "error": 300,
             "count": 1
         },
         {
-            "oht-id": 5214,
+            "oht-id": 2592,
             "error": 200,
             "count": 1
         },
@@ -76,17 +81,17 @@
         },
         {
             "oht-id": 2612,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
-            "oht-id": 5212,
-            "error": 200,
+            "oht-id": 2613,
+            "error": 300,
             "count": 1
         },
         {
             "oht-id": 5231,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
@@ -95,12 +100,12 @@
             "count": 2
         },
         {
-            "oht-id": 5234,
+            "oht-id": 2615,
             "error": 300,
             "count": 2
         },
         {
-            "oht-id": 5208,
+            "oht-id": 2599,
             "error": 300,
             "count": 2
         },
@@ -111,17 +116,17 @@
         },
         {
             "oht-id": 2611,
-            "error": 200,
+            "error": 300,
             "count": 2
         },
         {
             "oht-id": 2606,
-            "error": 200,
+            "error": 300,
             "count": 4
         },
         {
             "oht-id": 2610,
-            "error": 200,
+            "error": 300,
             "count": 6
         },
         {
@@ -131,7 +136,7 @@
         },
         {
             "oht-id": 2599,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
@@ -140,7 +145,7 @@
             "count": 2
         },
         {
-            "oht-id": 5206,
+            "oht-id": 2605,
             "error": 300,
             "count": 1
         },
@@ -151,7 +156,7 @@
         },
         {
             "oht-id": 2605,
-            "error": 200,
+            "error": 300,
             "count": 2
         },
         {
@@ -165,7 +170,7 @@
             "count": 1
         },
         {
-            "oht-id": 5215,
+            "oht-id": 2602,
             "error": 200,
             "count": 1
         },
@@ -176,12 +181,22 @@
         },
         {
             "oht-id": 2596,
-            "error": 200,
+            "error": 300,
             "count": 2
         },
         {
             "oht-id": 2604,
             "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2587,
+            "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2592,
+            "error": 200,
             "count": 1
         },
         {
@@ -191,12 +206,12 @@
         },
         {
             "oht-id": 2608,
-            "error": 200,
+            "error": 300,
             "count": 2
         },
         {
             "oht-id": 5208,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
@@ -206,11 +221,16 @@
         },
         {
             "oht-id": 2607,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
             "oht-id": 2615,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2587,
             "error": 200,
             "count": 1
         },
@@ -230,7 +250,12 @@
             "count": 1
         },
         {
-            "oht-id": 5232,
+            "oht-id": 2597,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2588,
             "error": 300,
             "count": 2
         },
@@ -240,7 +265,7 @@
             "count": 3
         },
         {
-            "oht-id": 5233,
+            "oht-id": 2594,
             "error": 300,
             "count": 1
         },
@@ -251,28 +276,58 @@
         },
         {
             "oht-id": 2614,
-            "error": 200,
+            "error": 300,
             "count": 2
         },
         {
-            "oht-id": 5229,
+            "oht-id": 2583,
             "error": 300,
             "count": 3
         },
         {
             "oht-id": 2589,
-            "error": 200,
+            "error": 300,
             "count": 1
         },
         {
             "oht-id": 2600,
-            "error": 200,
+            "error": 300,
             "count": 4
+        },
+        {
+            "oht-id": 2587,
+            "error": 200,
+            "count": 1
         },
         {
             "oht-id": 2605,
             "error": 300,
             "count": 2
+        },
+        {
+            "oht-id": 2601,
+            "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2604,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2608,
+            "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2690,
+            "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2597,
+            "error": 300,
+            "count": 1
         },
         {
             "oht-id": 2598,
@@ -285,13 +340,38 @@
             "count": 3
         },
         {
-            "oht-id": 5211,
+            "oht-id": 2587,
             "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2609,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2615,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2614,
+            "error": 300,
             "count": 1
         },
         {
             "oht-id": 2613,
             "error": 200,
+            "count": 1
+        },
+        {
+            "oht-id": 2582,
+            "error": 300,
+            "count": 1
+        },
+        {
+            "oht-id": 2601,
+            "error": 300,
             "count": 1
         }
     ]

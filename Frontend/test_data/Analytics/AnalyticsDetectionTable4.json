@@ -1,159 +1,7 @@
 {
     "simulation-log": [
         {
-            "time": "2024-04-30T10:12:20",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:21",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:22",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:23",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:24",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:25",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:26",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:27",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": false
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:28",
+            "time": "2024-05-27T14:12:34",
             "data": [
                 {
                     "oht-id": 2587,
@@ -172,7 +20,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:29",
+            "time": "2024-05-27T14:12:35",
             "data": [
                 {
                     "oht-id": 2587,
@@ -191,7 +39,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:30",
+            "time": "2024-05-27T14:12:36",
             "data": [
                 {
                     "oht-id": 2587,
@@ -210,121 +58,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:31",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:32",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:33",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:34",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:35",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:36",
-            "data": [
-                {
-                    "oht-id": 2587,
-                    "location": {
-                        "path": "path125",
-                        "curr-node": null,
-                        "point-x": 276.244,
-                        "point-y": 480.0
-                    },
-                    "status": "G",
-                    "carrier": true,
-                    "error": 0,
-                    "speed": 0.0,
-                    "fail": true
-                }
-            ]
-        },
-        {
-            "time": "2024-04-30T10:12:37",
+            "time": "2024-05-27T14:12:37",
             "data": [
                 {
                     "oht-id": 2587,
@@ -343,7 +77,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:38",
+            "time": "2024-05-27T14:12:38",
             "data": [
                 {
                     "oht-id": 2587,
@@ -362,7 +96,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:39",
+            "time": "2024-05-27T14:12:39",
             "data": [
                 {
                     "oht-id": 2587,
@@ -381,7 +115,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:40",
+            "time": "2024-05-27T14:12:40",
             "data": [
                 {
                     "oht-id": 2587,
@@ -393,14 +127,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:41",
+            "time": "2024-05-27T14:12:41",
             "data": [
                 {
                     "oht-id": 2587,
@@ -412,14 +146,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:42",
+            "time": "2024-05-27T14:12:42",
             "data": [
                 {
                     "oht-id": 2587,
@@ -431,14 +165,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:43",
+            "time": "2024-05-27T14:12:43",
             "data": [
                 {
                     "oht-id": 2587,
@@ -450,14 +184,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:44",
+            "time": "2024-05-27T14:12:44",
             "data": [
                 {
                     "oht-id": 2587,
@@ -469,14 +203,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:45",
+            "time": "2024-05-27T14:12:45",
             "data": [
                 {
                     "oht-id": 2587,
@@ -488,14 +222,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:46",
+            "time": "2024-05-27T14:12:46",
             "data": [
                 {
                     "oht-id": 2587,
@@ -507,14 +241,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:47",
+            "time": "2024-05-27T14:12:47",
             "data": [
                 {
                     "oht-id": 2587,
@@ -526,14 +260,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:48",
+            "time": "2024-05-27T14:12:48",
             "data": [
                 {
                     "oht-id": 2587,
@@ -545,14 +279,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:49",
+            "time": "2024-05-27T14:12:49",
             "data": [
                 {
                     "oht-id": 2587,
@@ -564,14 +298,14 @@
                     },
                     "status": "W",
                     "carrier": true,
-                    "error": 0,
+                    "error": 300,
                     "speed": 0.0,
                     "fail": true
                 }
             ]
         },
         {
-            "time": "2024-04-30T10:12:50",
+            "time": "2024-05-27T14:12:50",
             "data": [
                 {
                     "oht-id": 2587,
@@ -590,7 +324,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:51",
+            "time": "2024-05-27T14:12:51",
             "data": [
                 {
                     "oht-id": 2587,
@@ -609,7 +343,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:52",
+            "time": "2024-05-27T14:12:52",
             "data": [
                 {
                     "oht-id": 2587,
@@ -628,7 +362,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:53",
+            "time": "2024-05-27T14:12:53",
             "data": [
                 {
                     "oht-id": 2587,
@@ -647,7 +381,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:54",
+            "time": "2024-05-27T14:12:54",
             "data": [
                 {
                     "oht-id": 2587,
@@ -666,7 +400,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:55",
+            "time": "2024-05-27T14:12:55",
             "data": [
                 {
                     "oht-id": 2587,
@@ -685,7 +419,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:56",
+            "time": "2024-05-27T14:12:56",
             "data": [
                 {
                     "oht-id": 2587,
@@ -704,7 +438,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:57",
+            "time": "2024-05-27T14:12:57",
             "data": [
                 {
                     "oht-id": 2587,
@@ -723,7 +457,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:58",
+            "time": "2024-05-27T14:12:58",
             "data": [
                 {
                     "oht-id": 2587,
@@ -742,7 +476,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:12:59",
+            "time": "2024-05-27T14:12:59",
             "data": [
                 {
                     "oht-id": 2587,
@@ -761,7 +495,7 @@
             ]
         },
         {
-            "time": "2024-04-30T10:13:00",
+            "time": "2024-05-27T14:13:00",
             "data": [
                 {
                     "oht-id": 2587,

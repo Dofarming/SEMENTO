@@ -173,7 +173,7 @@ function toggleSidePageHandler(data) {
                   :labels="simulationStore().timeArray"
                   :work-per-all="simulationStore().averageArray"
                   :work-per-one="simulationStore().meArray"
-                  :oht-id="`${ohtId}호기`"
+                  :oht-id="`${simulationStore().ohtId}호기`"
                 />
               </div>
             </div>

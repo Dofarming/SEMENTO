@@ -234,7 +234,7 @@ const formatNumber = (value) => {
         <div class="container-item row gap-20">
           <div class="col">
             <BlackDataCard
-              title="가용 중인 OHT 수"
+              title="사용 중인 OHT 수"
               :content="
                 dashboardStore.ohtJobAnalysisData['oht-count'].data + ' 대'
               "
@@ -260,7 +260,7 @@ const formatNumber = (value) => {
               :height="'130px'"
             />
             <BlackDataCard
-              title="OHT 한달 평균 생산량"
+              title="OHT 평균 작업량"
               :content="
                 formatNumber(
                   dashboardStore.ohtJobAnalysisData['average-work'].data
@@ -342,7 +342,7 @@ const formatNumber = (value) => {
               :height="'130px'"
             />
             <BlackDataCard
-              title="평균 생산 시간"
+              title="평균 작업 시간"
               :content="averageWork"
               :percentage="
                 formatNumber(

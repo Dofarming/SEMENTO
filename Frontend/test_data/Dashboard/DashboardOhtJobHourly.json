@@ -1,98 +1,98 @@
 [
     {
         "hour": 0,
-        "work": 205
+        "work": 183
     },
     {
         "hour": 1,
-        "work": 336
+        "work": 176
     },
     {
         "hour": 2,
-        "work": 151
+        "work": 181
     },
     {
         "hour": 3,
-        "work": 544
+        "work": 182
     },
     {
         "hour": 4,
-        "work": 527
+        "work": 173
     },
     {
         "hour": 5,
-        "work": 9
+        "work": 171
     },
     {
         "hour": 6,
-        "work": 0
+        "work": 184
     },
     {
         "hour": 7,
-        "work": 0
+        "work": 192
     },
     {
         "hour": 8,
-        "work": 0
+        "work": 200
     },
     {
         "hour": 9,
-        "work": 532
+        "work": 212
     },
     {
         "hour": 10,
-        "work": 564
+        "work": 223
     },
     {
         "hour": 11,
-        "work": 27
+        "work": 236
     },
     {
         "hour": 12,
-        "work": 283
+        "work": 223
     },
     {
         "hour": 13,
-        "work": 0
+        "work": 212
     },
     {
         "hour": 14,
-        "work": 0
+        "work": 169
     },
     {
         "hour": 15,
-        "work": 301
+        "work": 170
     },
     {
         "hour": 16,
-        "work": 0
+        "work": 207
     },
     {
         "hour": 17,
-        "work": 423
+        "work": 208
     },
     {
         "hour": 18,
-        "work": 0
+        "work": 213
     },
     {
         "hour": 19,
-        "work": 0
+        "work": 216
     },
     {
         "hour": 20,
-        "work": 364
+        "work": 214
     },
     {
         "hour": 21,
-        "work": 311
+        "work": 201
     },
     {
         "hour": 22,
-        "work": 245
+        "work": 205
     },
     {
         "hour": 23,
-        "work": 0
+        "work": 191
     }
 ]

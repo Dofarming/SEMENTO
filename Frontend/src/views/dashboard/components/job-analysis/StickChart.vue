@@ -50,10 +50,10 @@ const chartData = reactive({
       label: false,
       backgroundColor: [
           '#BCE0F2', '#BCE0F2','#BCE0F2', '#BCE0F2', '#BCE0F2','#BCE0F2',
-          '#BCE0F2', '#BCE0F2','#BCE0F2', '#BCE0F2', '#BCE0F2','#BCE0F2',
-          '#BCE0F2', '#BCE0F2','#BCE0F2', '#BCE0F2', '#BCE0F2','#BCE0F2',
+          '#BCE0F2', '#BCE0F2','#BCE0F2', '#BCE0F2', '#BCE0F2','#003CB0',
+          '#BCE0F2', '#BCE0F2','#FF0000', '#BCE0F2', '#BCE0F2','#BCE0F2',
           '#BCE0F2', '#BCE0F2','#BCE0F2', '#BCE0F2', '#BCE0F2',
-          '#003CB0', // 마지막 막대만 색깔 다르게
+          '#BCE0F2', // 마지막 막대만 색깔 다르게
       ],
       data: ohtJobHourlyCount.value,
       borderRadius: 5,

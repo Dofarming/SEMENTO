@@ -156,6 +156,7 @@ const detectionReports = computed(() => {
 const handleStartDate = (newDate) => {
   // console.log("handleStartDate");
   startTime.value = newDate;
+  console.log(startTime.value)
 };
 const handleEndDate = (newDate) => {
   // console.log("handleEndDate");
@@ -175,14 +176,15 @@ const handleAIDetectionButton = async () => {
   //test-data
   setTimeout(() => {
     analysisStore.nowLoading = false;
-    startTime.value = '2024.05.27 10:00:00'
-    endTime.value = '2024.05.27 11:00:00'
+    startTime.value = '2024.05.27 14:00:00'
+    endTime.value = '2024.05.27 15:00:00'
+    notificationStore.sendNotification(); // 알림 띄우기
   }, 3000);
   /////
 
   // analysisStore.nowLoading = false;
   
-  notificationStore.sendNotification(); // 알림 띄우기
+  // notificationStore.sendNotification(); // 알림 띄우기
 };
 
 onMounted(async () => {});
