@@ -8,18 +8,19 @@ import { simulationComponentStore } from "@/stores/simulationComponent";
 import { ref, onMounted } from "vue";
 
 //test-data
-import analyticsDetectioTable1 from '/test_data/Analytics/AnalyticsDetectionTable1.json'
-import analyticsDetectioTable2 from '/test_data/Analytics/AnalyticsDetectionTable2.json'
-import analyticsDetectioTable3 from '/test_data/Analytics/AnalyticsDetectionTable3.json'
-import analyticsDetectioTable4 from '/test_data/Analytics/AnalyticsDetectionTable4.json'
-import analyticsDetectioTable5 from '/test_data/Analytics/AnalyticsDetectionTable5.json'
+import analyticsDetectioTable1 from "/test_data/Analytics/AnalyticsDetectionTable1.json";
+import analyticsDetectioTable2 from "/test_data/Analytics/AnalyticsDetectionTable2.json";
+import analyticsDetectioTable3 from "/test_data/Analytics/AnalyticsDetectionTable3.json";
+import analyticsDetectioTable4 from "/test_data/Analytics/AnalyticsDetectionTable4.json";
+import analyticsDetectioTable5 from "/test_data/Analytics/AnalyticsDetectionTable5.json";
 
-const testTabelData = [analyticsDetectioTable1,
-analyticsDetectioTable2,
-analyticsDetectioTable3,
-analyticsDetectioTable4,
-analyticsDetectioTable5
-]
+const testTabelData = [
+  analyticsDetectioTable1,
+  analyticsDetectioTable2,
+  analyticsDetectioTable3,
+  analyticsDetectioTable4,
+  analyticsDetectioTable5,
+];
 //////////////
 
 const { getCongestionSimulation } = simulationComponentStore();
@@ -53,52 +54,52 @@ const logs = ref([]);
 const datas = ref([]);
 
 onMounted(async () => {
-//   const start = new Date(detectionResult[props.number - 1]["start-date"]); //에러 시작 시간을 마지막 시간으로 설정해야함
-//   const end = new Date(detectionResult[props.number - 1]["end-date"]);
-//   start.setSeconds(start.getSeconds() - 15);
-//   start.setHours(start.getHours() + 9);
-//   end.setHours(end.getHours() + 9);
+  //   const start = new Date(detectionResult[props.number - 1]["start-date"]); //에러 시작 시간을 마지막 시간으로 설정해야함
+  //   const end = new Date(detectionResult[props.number - 1]["end-date"]);
+  //   start.setSeconds(start.getSeconds() - 15);
+  //   start.setHours(start.getHours() + 9);
+  //   end.setHours(end.getHours() + 9);
 
-//   logs.value = await getCongestionSimulation(
-//     start.toISOString().slice(0, -5),
-//     end.toISOString().slice(0, -5),
-//     [detectionResult[props.number - 1]["cause-oht"]]
-//   );
+  //   logs.value = await getCongestionSimulation(
+  //     start.toISOString().slice(0, -5),
+  //     end.toISOString().slice(0, -5),
+  //     [detectionResult[props.number - 1]["cause-oht"]]
+  //   );
 
-//   if (start.toISOString().startsWith("2024-04-30")) {
-//     start.setFullYear(2024);
-//     start.setMonth(4);
-//     start.setDate(20);
-//     end.setFullYear(2024);
-//     end.setMonth(4);
-//     end.setDate(20);
-//   }
+  //   if (start.toISOString().startsWith("2024-04-30")) {
+  //     start.setFullYear(2024);
+  //     start.setMonth(4);
+  //     start.setDate(20);
+  //     end.setFullYear(2024);
+  //     end.setMonth(4);
+  //     end.setDate(20);
+  //   }
 
-//   logs.value["simulation-log"].forEach((log) => {
-//     let [, year, month, day, hour, minute, second] = log["time"].match(
-//       /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/
-//     );
+  //   logs.value["simulation-log"].forEach((log) => {
+  //     let [, year, month, day, hour, minute, second] = log["time"].match(
+  //       /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/
+  //     );
 
-//     if (year == "2024" && month == "04" && day == "30") {
-//       month = "05";
-//       day = "20";
-//     }
-//     const dateString = `${year}.${month}.${day} ${hour}:${minute}:${second}`;
-//     const data = [
-//       dateString,
-//       log["data"][0]["oht-id"],
-//       log["data"][0]["location"]["path"],
-//       log["data"][0]["status"],
-//       log["data"][0]["carrier"],
-//       log["data"][0]["error"],
-//       log["data"][0]["speed"] + "m/s",
-//       log["data"][0]["fail"],
-//     ];
-//     datas.value.push(data);
-//   });
+  //     if (year == "2024" && month == "04" && day == "30") {
+  //       month = "05";
+  //       day = "20";
+  //     }
+  //     const dateString = `${year}.${month}.${day} ${hour}:${minute}:${second}`;
+  //     const data = [
+  //       dateString,
+  //       log["data"][0]["oht-id"],
+  //       log["data"][0]["location"]["path"],
+  //       log["data"][0]["status"],
+  //       log["data"][0]["carrier"],
+  //       log["data"][0]["error"],
+  //       log["data"][0]["speed"] + "m/s",
+  //       log["data"][0]["fail"],
+  //     ];
+  //     datas.value.push(data);
+  //   });
 
-//test-data
-testTabelData[props.number - 1]['simulation-log'].forEach((log) => {
+  //test-data
+  testTabelData[props.number - 1]["simulation-log"].forEach((log) => {
     let [, year, month, day, hour, minute, second] = log["time"].match(
       /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/
     );
@@ -120,7 +121,7 @@ testTabelData[props.number - 1]['simulation-log'].forEach((log) => {
       log["data"][0]["fail"],
     ];
     datas.value.push(data);
-  }); 
+  });
 });
 </script>
 

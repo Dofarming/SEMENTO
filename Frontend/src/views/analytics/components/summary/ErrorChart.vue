@@ -135,12 +135,13 @@ svg {
   fill: #fff;
   font-weight: bold;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  font-size: 23px;
 }
 
 .error__amount {
   fill: #fff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
