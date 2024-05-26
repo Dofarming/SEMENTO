@@ -46,7 +46,7 @@ watch(
   () => analysisStore.computedDetectionResult,
   (newValue, oldValue) => {
     const len = newValue.length;
-    labels.value = Array.from({ length: len }, (_, i) => (i + 1).toString());
+    labels.value = Array.from({ length: len }, (_, i) => `정체 ${i + 1}`);
 
     duration_times.value = newValue.map((result) => {
       const timeDiff =
@@ -75,6 +75,18 @@ onMounted(async () => {
     }
   });
 });
+
+function formatDuration(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+
+  const hDisplay = h > 0 ? `${h}시간 ` : "";
+  const mDisplay = m > 0 ? `${m}분 ` : "";
+  const sDisplay = s > 0 ? `${s}초` : "";
+
+  return `소요시간: ${hDisplay}${mDisplay}${sDisplay}`;
+}
 
 function drawLine() {
   const ctx = lineChart.value.getContext("2d");
@@ -133,6 +145,12 @@ function drawLine() {
             lineHeight: 1.5,
           },
           displayColors: false, // 색상 제거
+          callbacks: {
+            label: function (context) {
+              const value = context.raw;
+              return formatDuration(value);
+            },
+          },
         },
         datalabels: {
           formatter: function (value, context) {
