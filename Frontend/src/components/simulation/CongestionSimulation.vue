@@ -6,6 +6,21 @@ const { getCongestionSimulation } = simulationComponentStore();
 
 import { useAnalysisStore } from "@/stores/analysis";
 const analysisStore = useAnalysisStore();
+
+//test-data
+import analyticsDetectionSimulationData1 from '/test_data/Analytics/AnalyticsDetectionSimulation1.json'
+import analyticsDetectionSimulationData2 from '/test_data/Analytics/AnalyticsDetectionSimulation2.json'
+import analyticsDetectionSimulationData3 from '/test_data/Analytics/AnalyticsDetectionSimulation3.json'
+import analyticsDetectionSimulationData4 from '/test_data/Analytics/AnalyticsDetectionSimulation4.json'
+import analyticsDetectionSimulationData5 from '/test_data/Analytics/AnalyticsDetectionSimulation5.json'
+
+const testSimulationData = [analyticsDetectionSimulationData1,
+analyticsDetectionSimulationData2,
+analyticsDetectionSimulationData3,
+analyticsDetectionSimulationData4,
+analyticsDetectionSimulationData5
+]
+/////
 const props = defineProps({
   errorData: {
     type: Object,
@@ -2468,18 +2483,22 @@ watch(timeOrder, async () => {
 });
 
 onMounted(async () => {
-  const start = new Date(props.errorData["start-date"]); //에러 시작 시간을 마지막 시간으로 설정해야함
-  const end = new Date(props.errorData["end-date"]);
-  start.setSeconds(start.getSeconds() - 30);
-  start.setHours(start.getHours() + 9);
-  end.setHours(end.getHours() + 9);
+  // const start = new Date(props.errorData["start-date"]); //에러 시작 시간을 마지막 시간으로 설정해야함
+  // const end = new Date(props.errorData["end-date"]);
+  // start.setSeconds(start.getSeconds() - 30);
+  // start.setHours(start.getHours() + 9);
+  // end.setHours(end.getHours() + 9);
 
-  ohtLogs.value = await getCongestionSimulation(
-    start.toISOString().slice(0, -5),
-    end.toISOString().slice(0, -5),
-    []
-    // [props.errorData["cause-oht"]]
-  );
+  // ohtLogs.value = await getCongestionSimulation(
+  //   start.toISOString().slice(0, -5),
+  //   end.toISOString().slice(0, -5),
+  //   []
+  //   // [props.errorData["cause-oht"]]
+  // );
+
+  //test-data
+  ohtLogs.value = testSimulationData[props.number - 1]
+  //////
 
   parentElement.value = document.querySelector(".white-box");
 

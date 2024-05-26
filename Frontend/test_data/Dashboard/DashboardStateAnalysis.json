@@ -1,0 +1,14 @@
+{
+    "deadline": {
+        "data": 200,
+        "percent": 0.0
+    },
+    "average-work-time": {
+        "data": 220,
+        "percent": 40.12738853503185
+    },
+    "average-idle-time": {
+        "data": 39,
+        "percent": 8.333333333333332
+    }
+}

@@ -2,6 +2,9 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 import { instance } from "@/util/axios-util";
 
+//test-data
+import simulationData from '/test_data/Simulation/SimulationData.json'
+
 export const simulationComponentStore = defineStore(
   "simulationComponentStore",
   () => {
@@ -40,34 +43,37 @@ export const simulationComponentStore = defineStore(
 
     //==시뮬레이션 데이터를 로드==
     const getSimulation = async (timeOrder, ohtList) => {
-      try {
-        const resp = await instance.post("/simulation/simulation-log", {
-          "start-date": intervals.value[timeOrder].start,
-          "end-date": intervals.value[timeOrder].end,
-          "oht-id": ohtList,
-        });
-        const { data, error } = resp;
-        if (error) alert("SimulatiomData Not Found \n", error);
-        else return data;
-      } catch (error) {
-        return emptyData;
-      }
+      // try {
+      //   const resp = await instance.post("/simulation/simulation-log", {
+      //     "start-date": intervals.value[timeOrder].start,
+      //     "end-date": intervals.value[timeOrder].end,
+      //     "oht-id": ohtList,
+      //   });
+      //   const { data, error } = resp;
+      //   if (error) alert("SimulatiomData Not Found \n", error);
+      //   else return data;
+      // } catch (error) {
+      //   return emptyData;
+      // }
+      return simulationData
     };
 
     //==에러 시뮬레이션 데이터를 로드==
     const getCongestionSimulation = async (start, end, ohtList) => {
-      try {
-        const resp = await instance.post("/simulation/simulation-log", {
-          "start-date": start,
-          "end-date": end,
-          "oht-id": ohtList,
-        });
-        const { data, error } = resp;
-        if (error) alert("SimulatiomData Not Found \n", error);
-        else return data;
-      } catch (error) {
-        return emptyData;
-      }
+      // try {
+      //   const resp = await instance.post("/simulation/simulation-log", {
+      //     "start-date": start,
+      //     "end-date": end,
+      //     "oht-id": ohtList,
+      //   });
+      //   const { data, error } = resp;
+      //   if (error) alert("SimulatiomData Not Found \n", error);
+      //   else return data;
+      // } catch (error) {
+      //   return emptyData;
+      // }
+      console.log("시뮬 api 쓰고있다")
+      return simulationWorkLogSimulationData
     };
 
     return {

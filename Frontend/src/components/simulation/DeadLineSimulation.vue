@@ -3,6 +3,8 @@ import { ref, onMounted, watch, defineExpose } from "vue";
 import * as d3 from "d3";
 import { simulationComponentStore } from "@/stores/simulationComponent";
 import { faL } from "@fortawesome/free-solid-svg-icons";
+
+import simulationWorkLogSimulationData from '/test_data/Simulation/SimulationWorkLogSimulation.json'
 const { getCongestionSimulation, sideViewSimulationData } = simulationComponentStore();
 
 function checkPropsChange(datas){
@@ -10,56 +12,61 @@ function checkPropsChange(datas){
     resetPoint(nowTime)
     return
   }
-    ohtLogs.value = datas;
-    nowTime = 0
-    resetPoint(nowTime)
-    movePoint(nowTime)
+  ohtLogs.value = datas;
+  nowTime = 0
+  resetPoint(nowTime)
+  movePoint(nowTime)
 }
 
 const timeOrder = ref(0);
 const reset = ref(false)
-const ohtLogs = ref({
-  "simulation-log": [
-    {
-      time: "0000-00-00T00:00:00",
-      data: [
-        {
-          "oht-id": 2586,
-          location: {
-            path: null,
-            "curr-node": null,
-            "point-x": 128.08,
-            "point-y": 451.96,
-          },
-          status: "I",
-          carrier: false,
-          error: 0,
-          speed: 0.0,
-          fail: false,
-        },
-      ],
-    },
-    {
-      time: "0000-00-00T00:00:01",
-      data: [
-        {
-          "oht-id": 2586,
-          location: {
-            path: null,
-            "curr-node": null,
-            "point-x": 128.08,
-            "point-y": 451.96,
-          },
-          status: "I",
-          carrier: false,
-          error: 0,
-          speed: 0.0,
-          fail: false,
-        },
-      ],
-    },
-  ],
-});
+const startSimulation = ref(false)
+
+//test-data
+// const ohtLogs = ref({
+//   "simulation-log": [
+//     {
+//       time: "0000-00-00T00:00:00",
+//       data: [
+//         {
+//           "oht-id": 2586,
+//           location: {
+//             path: null,
+//             "curr-node": null,
+//             "point-x": 128.08,
+//             "point-y": 451.96,
+//           },
+//           status: "I",
+//           carrier: false,
+//           error: 0,
+//           speed: 0.0,
+//           fail: false,
+//         },
+//       ],
+//     },
+//     {
+//       time: "0000-00-00T00:00:01",
+//       data: [
+//         {
+//           "oht-id": 2586,
+//           location: {
+//             path: null,
+//             "curr-node": null,
+//             "point-x": 128.08,
+//             "point-y": 451.96,
+//           },
+//           status: "I",
+//           carrier: false,
+//           error: 0,
+//           speed: 0.0,
+//           fail: false,
+//         },
+//       ],
+//     },
+//   ],
+// });
+
+const ohtLogs = ref(simulationWorkLogSimulationData)
 
 // 임의의 노드와 링크 생성
 const nodes = [
@@ -1171,7 +1178,10 @@ onMounted(async () => {
     .range([padding, height - padding]);
 
   drawSimulation(width, height);
-  movePoint(nowTime);
+
+  if(startSimulation.value){
+    movePoint(nowTime);
+  }
 });
 
 defineExpose({

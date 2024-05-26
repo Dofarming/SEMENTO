@@ -5,12 +5,11 @@ import Text2 from "@/components/Text/Text2.vue";
 import SearchInput from "@/components/searchBar/SearchInput.vue";
 import Button from "@/components/button/Button.vue";
 import Line from "@/components/line/Line.vue";
-import { ref, onMounted, watch, computed } from "vue";
+import { ref, computed } from "vue";
 import Multiselect from "vue-multiselect";
 import "vue-multiselect/dist/vue-multiselect.css";
 import StickChart from "./components/StickChart.vue";
 import BlackDataCard from "@/components/card/BlackDataCard.vue";
-import SimulationSideTapView from "./SimulationSideTapView.vue";
 import SideTabTable from "@/components/table/SideTabTable.vue";
 import Loading from "@/components/loading/Loading.vue";
 import { simulationStore } from "@/stores/simulation";
@@ -78,7 +77,13 @@ const handleEndDate = (newDate) => {
 const handleSimulationButton = async () => {
   nowLoading.value = true;
   await getNewResult(newStartDate, newEndDate, selectedOhtId);
-  nowLoading.value = false;
+  //test-data
+  setTimeout(() => {
+    nowLoading.value = false;
+  }, 3000);
+  ///
+
+  // nowLoading.value = false;
 };
 
 const initialPage = computed(() => {

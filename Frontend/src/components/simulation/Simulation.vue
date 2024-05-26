@@ -1899,6 +1899,7 @@ onMounted(async () => {
     //== 시뮬레이션 데이터 로드 : 시간단위로 잘라서 연속적으로 요청해야함
   splitTimeRange(startDate, endDate)
   ohtLogs.value = await getSimulation(0, []);
+  currentTimeText.value = formatTime(ohtLogs.value["simulation-log"][0]['time'])
   
   // 부모 요소의 가로와 세로 크기를 가져옵니다.
   const parentWidth = parentElement.value.clientWidth;

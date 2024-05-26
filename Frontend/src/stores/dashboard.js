@@ -1,8 +1,16 @@
-import { ref, computed } from "vue";
-import { defineStore } from "pinia";
-import { instance } from "@/util/axios-util";
+import { ref, computed } from 'vue'
+import { defineStore } from 'pinia'
+import { instance } from '@/util/axios-util'
+//test-data import
+import dashboardOhtJobAnalysisData from '/test_data/Dashboard/DashboardOhtJobAnalysis.json'
+import dashboardOhtJobHourlyData from '/test_data/Dashboard/DashboardOhtJobHourly.json'
+import dashboardJobResultAnalysisData from '/test_data/Dashboard/DashboardJobResultAnalysis.json'
+import dashboardStateAnalysisData from '/test_data/Dashboard/DashboardStateAnalysis.json'
+import dashboardStateHourlyAnalysisData from '/test_data/Dashboard/DashboardStateHourlyAnalysis.json'
 
-export const useDashboardStore = defineStore("dashboard", () => {
+
+export const useDashboardStore = defineStore('dashboard', () => {
+
   const startTime = ref("");
   const endTime = ref("");
   const ohtJobAnalysisData = ref({
@@ -24,29 +32,23 @@ export const useDashboardStore = defineStore("dashboard", () => {
 
   const jobResultAnalysisData = ref({});
 
-  const getOhtJobAnalysis = async (startTime, endTime) => {
-    const { data } = await instance.post("/dashboard/oht-job-analysis", {
-      "start-time": startTime,
-      "end-time": endTime,
-    });
-    ohtJobAnalysisData.value = data;
-  };
+  const getOhtJobAnalysis = async(startTime, endTime) => {
+    // const {data} = await instance.post("/dashboard/oht-job-analysis", {"start-time":startTime, "end-time":endTime});
+    // ohtJobAnalysisData.value = data;
+    ohtJobAnalysisData.value = dashboardOhtJobAnalysisData
+  }
 
-  const getOhtJobHourly = async (startTime, endTime) => {
-    const { data } = await instance.post("/dashboard/oht-job-hourly", {
-      "start-time": startTime,
-      "end-time": endTime,
-    });
-    ohtJobHourlyData.value = data;
-  };
+  const getOhtJobHourly = async(startTime, endTime) => {
+    // const {data} = await instance.post("/dashboard/oht-job-hourly", {"start-time":startTime, "end-time":endTime});
+    // ohtJobHourlyData.value = data;
+    ohtJobHourlyData.value = dashboardOhtJobHourlyData
+  }
 
-  const getJobResultAnalysis = async (startTime, endTime) => {
-    const { data } = await instance.post("/dashboard/job-result-analysis", {
-      "start-time": startTime,
-      "end-time": endTime,
-    });
-    jobResultAnalysisData.value = data;
-  };
+  const getJobResultAnalysis = async(startTime, endTime) => {
+    // const {data} = await instance.post("/dashboard/job-result-analysis", {"start-time":startTime, "end-time":endTime});
+    // jobResultAnalysisData.value = data;
+    jobResultAnalysisData.value = dashboardJobResultAnalysisData
+  }
 
   const watchedJobResultAnalysisData = computed(
     () => jobResultAnalysisData.value
@@ -67,23 +69,19 @@ export const useDashboardStore = defineStore("dashboard", () => {
     },
   });
 
-  const getStateAnalysis = async (startTime, endTime) => {
-    const { data } = await instance.post("/dashboard/state-analysis", {
-      "start-time": startTime,
-      "end-time": endTime,
-    });
-    stateAnalysisData.value = data;
-  };
+  const getStateAnalysis = async(startTime, endTime) => {
+    // const {data} = await instance.post("/dashboard/state-analysis", {"start-time":startTime, "end-time":endTime});
+    // stateAnalysisData.value = data;
+    stateAnalysisData.value = dashboardStateAnalysisData
+  }
 
   const stateHourlyAnalysisData = ref({});
 
-  const getStateHourlyAnalysis = async (startTime, endTime) => {
-    const { data } = await instance.post("/dashboard/state-hourly-analysis", {
-      "start-time": startTime,
-      "end-time": endTime,
-    });
-    stateHourlyAnalysisData.value = data;
-  };
+  const getStateHourlyAnalysis = async(startTime, endTime) => {
+    // const {data} = await instance.post("/dashboard/state-hourly-analysis", {"start-time":startTime, "end-time":endTime});
+    // stateHourlyAnalysisData.value = data;
+    stateHourlyAnalysisData.value = dashboardStateHourlyAnalysisData
+  }
 
   const watchedStateHourlyAnalysisData = computed(
     () => stateHourlyAnalysisData.value
