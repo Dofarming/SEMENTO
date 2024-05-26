@@ -7,22 +7,10 @@ import Header from "@/components/header/Header.vue";
 import AppFloatingAlert from "@/views/alert/AppFloatingAlert.vue";
 import AIAppFloatingAlert from "./views/alert/AIAppFloatingAlert.vue";
 
-const isAuthenticated = ref(false);
-if (isAuthenticated.value == false) confirm();
-function confirm() {
-  const enteredPassword = prompt("시연을 위해 비밀번호를 입력받고 있습니다.");
-  // 여기에서 실제 비밀번호 확인을 수행할 수 있습니다.
-  if (enteredPassword === "응세멘토결선1등") {
-    isAuthenticated.value = true;
-  } else {
-    alert("잘못된 비밀번호입니다.");
-    confirm();
-  }
-}
 </script>
 
 <template>
-  <div v-if="isAuthenticated" class="container">
+  <div class="container">
     <SideBar id="side-bar" />
     <div class="content">
       <Header />
