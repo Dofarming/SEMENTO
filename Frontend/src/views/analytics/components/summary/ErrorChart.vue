@@ -82,28 +82,30 @@ const rootHierarchy = computed(() =>
 // Pack the circles inside the viewbox
 // const layoutData = pack().size([300, 350]).padding(-10)(rootHierarchy);
 const layoutData = computed(() =>
-  pack().size([300, 350]).padding(-10)(rootHierarchy.value)
+  pack().size([280, 330]).padding(-20)(rootHierarchy.value)
 );
 </script>
 
 <template>
   <div>
-    <svg width="300" height="500">
-      <g
-        class="error"
-        v-for="error in layoutData.children"
-        :key="error.data.name"
-        :style="{
-          transform: `translate(${error.x}px, ${error.y}px)`,
-        }"
-      >
-        <circle
-          class="error__circle"
-          :r="error.r"
-          :fill="error.data.color"
-        ></circle>
-        <text class="error__label" y="-5">{{ error.data.name }}</text>
-        <text class="error__amount" y="20">{{ error.data.amount }}</text>
+    <svg width="330" height="500">
+      <g transform="translate(25, 0)">
+        <g
+          class="error"
+          v-for="error in layoutData.children"
+          :key="error.data.name"
+          :style="{
+            transform: `translate(${error.x}px, ${error.y}px)`,
+          }"
+        >
+          <circle
+            class="error__circle"
+            :r="error.r"
+            :fill="error.data.color"
+          ></circle>
+          <text class="error__label" y="-5">{{ error.data.name }}</text>
+          <text class="error__amount" y="20">{{ error.data.amount }}</text>
+        </g>
       </g>
     </svg>
     <div class="controls">

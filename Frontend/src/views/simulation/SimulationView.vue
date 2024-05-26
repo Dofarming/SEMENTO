@@ -102,7 +102,7 @@ function toggleSidePageHandler(data) {
     <!-- 설명 및 검색창 -->
     <section class="input">
       <Text2
-        text="개별이송체의 시스템로그를 통해 시뮬레이션과 분석결과를 받아보세요."
+        text="각 OHT의 시스템로그를 통해 시뮬레이션과 분석결과를 받아보세요."
       />
       <div class="input-data">
         <SearchInput
