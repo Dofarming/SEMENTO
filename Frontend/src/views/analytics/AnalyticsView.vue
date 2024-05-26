@@ -171,7 +171,17 @@ const handleAIDetectionButton = async () => {
     congTime.value +=
       (new Date(result["end-date"]) - new Date(result["start-date"])) / 1000;
   });
-  analysisStore.nowLoading = false;
+
+  //test-data
+  setTimeout(() => {
+    analysisStore.nowLoading = false;
+    startTime.value = '2024.05.27 10:00:00'
+    endTime.value = '2024.05.27 11:00:00'
+  }, 3000);
+  /////
+
+  // analysisStore.nowLoading = false;
+  
   notificationStore.sendNotification(); // 알림 띄우기
 };
 
@@ -284,7 +294,7 @@ onMounted(async () => {});
       >
         <SementoAiResultCard
           :location="true"
-          :number="report.index"
+          :number="parseInt(report.index, 10)"
           :text="`${report.startDate} ~ ${report.endDate} [총 ${report.durationText}]`"
           :cause="report.cause"
           :accuracy="report.accuracy"

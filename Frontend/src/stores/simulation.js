@@ -3,17 +3,26 @@ import { defineStore } from "pinia";
 import { instance } from "@/util/axios-util";
 import moment from "moment";
 
+//test-data
+import simulationBlackCardData from '/test_data/Simulation/SimulationBlackCardData.json'
+import simulationGraphData from '/test_data/Simulation/SimulationGraphData.json'
+import simulationWorkLogData from '/test_data/Simulation/SimulationWorkLogData.json'
+
 export const simulationStore = defineStore("simulationStore", () => {
   const startDate = ref();
   const endDate = ref();
   const ohtId = ref();
 
   //==결과 데이터
-  const simulationData = ref(null);
   const classificationLog = ref(null);
   const chartData = ref(null);
   const comparedData = ref(null);
   const isDataLoaded = ref(false);
+
+  //testData
+  comparedData.value = simulationBlackCardData
+  chartData.value = simulationGraphData
+  classificationLog.value = simulationWorkLogData
 
   //차트관련
   const timeArray = ref([null]);
@@ -125,29 +134,16 @@ export const simulationStore = defineStore("simulationStore", () => {
     setEndDate(newEndDate);
     setOhtId(newOhtId);
 
-    await getComparedData();
+    // await getComparedData();
     setComparedData();
 
-    await getChartData();
+    // await getChartData();
     setChart();
 
-    await getClassificationLog();
+    // await getClassificationLog();
     setclassificationLogData();
 
     isDataLoaded.value = true;
-  };
-
-  //==시뮬레이션 데이터를 로드==
-  const getSimulation = async () => {
-    const ohtIdList = ref([ohtId.value]); //ohtId를 배열화
-    const resp = await instance.post("/simulation/simulation-log", {
-      "start-date": startDate.value,
-      "end-date": endDate.value,
-      "oht-id": ohtIdList.value,
-    });
-    const { data, error } = resp;
-    if (error) alert("SimulatiomData Not Found \n", error);
-    else return data;
   };
 
   //==작업별로 분류된 로그 데이터를 로드==

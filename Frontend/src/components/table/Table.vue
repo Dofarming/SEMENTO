@@ -10,7 +10,7 @@
 
 -->
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, nextTick, watch } from "vue";
 const props = defineProps({
   columns: Array, // 테이블의 컬럼명 배열
   data: Array, // 테이블 데이터
@@ -54,15 +54,6 @@ const handleRowClick = (index) => {
   }
 };
 
-function getColumnColor(column) {
-  if (column === "ERROR") {
-    return "red";
-  } else if (column === "STATUS") {
-    return "blue";
-  }
-  return "black";
-}
-
 //== 무한스크롤
 const pageSize = 20;
 const currentPage = ref(1);
@@ -89,7 +80,7 @@ onMounted(() => {
   observer.value = new IntersectionObserver(
     (entries) => {
       const [entry] = entries;
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && visibleData.value.length !== 0) {
         loadMoreData();
       }
     },
@@ -108,6 +99,10 @@ onUnmounted(() => {
   if (observer.value && sentinel.value) {
     observer.value.unobserve(sentinel.value);
   }
+});
+
+watch(props.data, () => {
+  visibleData.value = props.data.slice(0, pageSize);
 });
 </script>
 

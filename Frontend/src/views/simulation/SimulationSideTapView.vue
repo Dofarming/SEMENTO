@@ -8,6 +8,9 @@ import { defineExpose } from "vue";
 import { simulationComponentStore } from "@/stores/simulationComponent";
 const { getCongestionSimulation } = simulationComponentStore();
 
+//test-data
+import simulationWorkLogSimulationData from '/test_data/Simulation/SimulationWorkLogSimulation.json'
+
 const headerText = ref("");
 const tapNum = ref(0);
 const datas = ref([]);
@@ -17,7 +20,8 @@ const simulationView = ref(null);
 
 async function setPage(data, ohtId, idx) {
   if (idx === -1) {
-    simulationView.value.checkPropsChange(null);
+    //test-data
+    // simulationView.value.checkPropsChange(null);
     return;
   }
   // 문자열을 분리하여 각 시간 부분을 추출
@@ -32,11 +36,14 @@ async function setPage(data, ohtId, idx) {
   startDate.setHours(startDate.getHours() + 9);
   endDate.setHours(endDate.getHours() + 9);
 
-  const response = await getCongestionSimulation(
-    startDate.toISOString(),
-    endDate.toISOString(),
-    [ohtId]
-  );
+  // const response = await getCongestionSimulation(
+  //   startDate.toISOString(),
+  //   endDate.toISOString(),
+  //   [ohtId]
+  // );
+
+  //test-data
+  const response = simulationWorkLogSimulationData
 
   responseData.value = response;
 

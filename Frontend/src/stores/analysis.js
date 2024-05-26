@@ -3,6 +3,9 @@ import { defineStore } from "pinia";
 import { instance } from "@/util/axios-util";
 import moment from "moment";
 
+//test-dataa
+import analyticsAIData from '/test_data/Analytics/AnalyticsAIData.json'
+
 export const useAnalysisStore = defineStore("analysisStore", () => {
   const startDate = ref();
   const endDate = ref();
@@ -25,16 +28,19 @@ export const useAnalysisStore = defineStore("analysisStore", () => {
       tempEndDate.setDate(30);
     }
 
-    const resp = await instance.post("/analytics/ai-detection", {
-      "start-time": transformDate(tempStartDate),
-      "end-time": transformDate(tempEndDate),
-    });
-    const { data, error } = resp;
-    if (error) alert("Ai Detection Data Not Found \n", error);
-    else {
-      detectionResult.value = data["detection-result"];
-    }
+    // const resp = await instance.post("/analytics/ai-detection", {
+    //   "start-time": transformDate(tempStartDate),
+    //   "end-time": transformDate(tempEndDate),
+    // });
+    // const { data, error } = resp;
+    // if (error) alert("Ai Detection Data Not Found \n", error);
+    // else {
+    //   detectionResult.value = data["detection-result"];
+    // }
 
+    //test-data
+    detectionResult.value = analyticsAIData["detection-result"]
+    
     detectionResult.value.forEach((result) => {
       totalCongestionTime.value +=
         (new Date(result["end-date"]) - new Date(result["start-date"])) / 1000;

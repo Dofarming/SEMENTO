@@ -160,7 +160,12 @@ onMounted(async () => {
     String(item["count"]),
   ]);
 
-  nowLoading.value = false;
+  //test-data
+  setTimeout(() => {
+    nowLoading.value = false;
+  }, 3000);
+  ///
+  // nowLoading.value = false;
 });
 
 watch(
