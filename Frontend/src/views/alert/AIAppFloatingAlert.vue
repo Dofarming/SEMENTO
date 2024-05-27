@@ -80,6 +80,7 @@ const leave = (el, done) => {
   width: 400px; /* 가로 길이 조절 */
   border-radius: 5px;
   overflow: hidden;
+  z-index: 5;
 }
 
 .notification-header {
