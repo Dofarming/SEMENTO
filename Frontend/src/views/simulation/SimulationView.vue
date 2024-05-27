@@ -186,7 +186,7 @@ function toggleSidePageHandler(data) {
                 :content="simulationStore().totalWork.data + ' 건'"
                 :percentage="simulationStore().totalWork.percent + '%'"
                 :fontColor="
-                  simulationStore().totalWork.percent >= 0 ? 'red' : 'blue'
+                  simulationStore().totalWork.percent >= 0 ? 'red' : 'DeepSkyBlue'
                 "
                 :height="'130px'"
                 width="250px"
@@ -196,7 +196,7 @@ function toggleSidePageHandler(data) {
                 :content="simulationStore().outOfDeadline.data + ' 건'"
                 :percentage="simulationStore().outOfDeadline.percent + '%'"
                 :fontColor="
-                  simulationStore().outOfDeadline.percent >= 0 ? 'red' : 'blue'
+                  simulationStore().outOfDeadline.percent >= 0 ? 'red' : 'DeepSkyBlue'
                 "
                 :height="'130px'"
                 width="250px"
@@ -208,7 +208,7 @@ function toggleSidePageHandler(data) {
                 :content="simulationStore().averageSpeed.data + ' m/s'"
                 :percentage="simulationStore().averageSpeed.percent + '%'"
                 :fontColor="
-                  simulationStore().averageSpeed.percent >= 0 ? 'red' : 'blue'
+                  simulationStore().averageSpeed.percent >= 0 ? 'red' : 'DeepSkyBlue '
                 "
                 :height="'130px'"
                 width="250px"
@@ -218,7 +218,7 @@ function toggleSidePageHandler(data) {
                 :content="simulationStore().ohtError.data + ' 건'"
                 :percentage="simulationStore().ohtError.percent + '%'"
                 :fontColor="
-                  simulationStore().ohtError.percent >= 0 ? 'red' : 'blue'
+                  simulationStore().ohtError.percent >= 0 ? 'red' : 'DeepSkyBlue '
                 "
                 :height="'130px'"
                 width="250px"

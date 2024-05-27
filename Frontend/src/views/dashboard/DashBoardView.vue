@@ -254,7 +254,7 @@ const formatNumber = (value) => {
               :fontColor="
                 dashboardStore.ohtJobAnalysisData['total-work'].percent >= 0
                   ? 'red'
-                  : 'blue'
+                  : 'DeepSkyBlue'
               "
               :width="'320px'"
               :height="'130px'"
@@ -353,7 +353,7 @@ const formatNumber = (value) => {
                 dashboardStore.stateAnalysisData['average-work-time'].percent >=
                 0
                   ? 'red'
-                  : 'blue'
+                  : 'DeepSkyBlue'
               "
               :width="'320px'"
               :height="'130px'"
@@ -370,7 +370,7 @@ const formatNumber = (value) => {
                 dashboardStore.stateAnalysisData['average-idle-time'].percent >=
                 0
                   ? 'red'
-                  : 'blue'
+                  : 'DeepSkyBlue'
               "
               :width="'320px'"
               :height="'130px'"

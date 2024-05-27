@@ -27,7 +27,7 @@ const props = defineProps({
   },
   fontColor: {
     type: String,
-    default: "blue",
+    default: "DeepSkyBlue",
   },
   height: {
     type: String,

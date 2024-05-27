@@ -1,11 +1,11 @@
 {
     "total-work": {
-        "data": 42,
-        "percent": -12.547442680776009
+        "data": 37,
+        "percent": -12.195121951219512
     },
     "out-of-dead-line": {
-        "data": 5,
-        "percent": 11.904761904761904
+        "data": 6,
+        "percent": 16.666666666666667
     },
     "average-speed": {
         "data": 1.2802662048209115,

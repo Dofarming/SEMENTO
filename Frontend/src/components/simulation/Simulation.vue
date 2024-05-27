@@ -1803,6 +1803,14 @@ function drawSimulation(width, height) {
         .attr("font-size", 9)
         .text(ohtLogs.value["simulation-log"][0]['data'][i]["oht-id"]);
 
+               //test-data
+        if(ohtLogs.value["simulation-log"][0]['data'][i]["oht-id"] == '2586'){
+            point.attr("stroke", "#545454") // 테두리 색상
+                 .attr("stroke-width", 1.5) // 테두리 두께
+                 .attr("stroke-dasharray", "4 2") // 점선 패턴
+                 .text(ohtLogs.value["simulation-log"][0]["data"][i]["oht-id"]);
+        }
+
         // 생성된 원을 배열에 추가합니다.
         ohts.push(point);
         ohtTexts.push(ohtId);

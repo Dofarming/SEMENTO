@@ -1,107 +1,115 @@
 {
-    "total-cnt": 42,
+    "total-cnt": 37,
     "log-per-work": [
         {
-            "start-time": "2024-05-27T15:01:17",
-            "end-time": "2024-05-27T15:09:30",
+            "start-time": "2024-05-27T14:01:17",
+            "end-time": "2024-05-27T14:05:30",
             "oht-id": 2586,
             "errors": [],
-            "average-speed": 0.49211764958277193,
-            "out-of-deadline": true
+            "average-speed": 1.09211764958277193,
+            "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T15:13:04",
-            "end-time": "2024-05-27T15:14:33",
+            "start-time": "2024-05-27T14:11:04",
+            "end-time": "2024-05-27T14:12:33",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.3023370698596655,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T15:52:12",
-            "end-time": "2024-05-27T16:01:30",
+            "start-time": "2024-05-27T14:12:56",
+            "end-time": "2024-05-27T14:22:14",
             "oht-id": 2586,
             "errors": [
                 200
             ],
             "average-speed": 0.35303225819568906,
-            "out-of-deadline": false
+            "out-of-deadline": true
         },
         {
-            "start-time": "2024-05-27T15:18:32",
-            "end-time": "2024-05-27T15:20:08",
+            "start-time": "2024-05-27T14:27:32",
+            "end-time": "2024-05-27T14:30:08",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.2119270792851846,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T15:20:17",
-            "end-time": "2024-05-27T15:21:45",
+            "start-time": "2024-05-27T14:32:17",
+            "end-time": "2024-05-27T14:43:45",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.2578764072294986,
-            "out-of-deadline": false
+            "out-of-deadline": true
         },
         {
-            "start-time": "2024-05-27T15:22:49",
-            "end-time": "2024-05-27T15:24:43",
+            "start-time": "2024-05-27T14:49:49",
+            "end-time": "2024-05-27T14:52:43",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.4997130392038305,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T15:24:48",
-            "end-time": "2024-05-27T15:33:08",
+            "start-time": "2024-05-27T15:04:48",
+            "end-time": "2024-05-27T15:13:08",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 0.45411399790644646,
             "out-of-deadline": true
         },
         {
-            "start-time": "2024-05-27T15:38:24",
-            "end-time": "2024-05-27T15:42:21",
+            "start-time": "2024-05-27T15:18:24",
+            "end-time": "2024-05-27T15:22:21",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.17901260311864,
-            "out-of-deadline": true
+            "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T15:50:49",
-            "end-time": "2024-05-27T15:52:11",
+            "start-time": "2024-05-27T15:24:49",
+            "end-time": "2024-05-27T15:27:11",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.4263012012444347,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T16:01:31",
-            "end-time": "2024-05-27T16:04:31",
+            "start-time": "2024-05-27T15:30:31",
+            "end-time": "2024-05-27T15:33:31",
             "oht-id": 2586,
             "errors": [],
-            "average-speed": 0.8141166650586658,
+            "average-speed": 1.1141166650586658,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T16:05:03",
-            "end-time": "2024-05-27T16:06:03",
+            "start-time": "2024-05-27T15:34:31",
+            "end-time": "2024-05-27T15:37:17",
+            "oht-id": 2586,
+            "errors": [],
+            "average-speed": 1.3141166650586658,
+            "out-of-deadline": false
+        },
+        {
+            "start-time": "2024-05-27T15:39:03",
+            "end-time": "2024-05-27T15:49:03",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 0.34913333257039386,
-            "out-of-deadline": false
+            "out-of-deadline": true
         },
         {
-            "start-time": "2024-05-27T16:06:10",
-            "end-time": "2024-05-27T16:08:33",
+            "start-time": "2024-05-27T15:49:10",
+            "end-time": "2024-05-27T15:52:33",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 1.3892937081677097,
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T16:11:23",
-            "end-time": "2024-05-27T16:12:58",
+            "start-time": "2024-05-27T15:54:23",
+            "end-time": "2024-05-27T15:57:58",
             "oht-id": 2586,
             "errors": [],
             "average-speed": 2.3523263148362994,
@@ -204,22 +212,6 @@
             "out-of-deadline": false
         },
         {
-            "start-time": "2024-05-27T16:37:46",
-            "end-time": "2024-05-27T16:40:22",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.9230833368805738,
-            "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T16:41:41",
-            "end-time": "2024-05-27T16:49:08",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 0.5756442976211275,
-            "out-of-deadline": true
-        },
-        {
             "start-time": "2024-05-27T17:01:18",
             "end-time": "2024-05-27T17:10:00",
             "oht-id": 2586,
@@ -234,22 +226,6 @@
             "errors": [],
             "average-speed": 2.3756845201409997,
             "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T17:15:46",
-            "end-time": "2024-05-27T17:19:32",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.1708097360302916,
-            "out-of-deadline": true
-        },
-        {
-            "start-time": "2024-05-27T17:19:33",
-            "end-time": "2024-05-27T17:23:19",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.6988716774282202,
-            "out-of-deadline": true
         },
         {
             "start-time": "2024-05-27T17:25:34",
@@ -268,6 +244,22 @@
             "out-of-deadline": false
         },
         {
+            "start-time": "2024-05-27T17:37:46",
+            "end-time": "2024-05-27T17:40:22",
+            "oht-id": 2586,
+            "errors": [],
+            "average-speed": 1.9230833368805738,
+            "out-of-deadline": false
+        },
+        {
+            "start-time": "2024-05-27T17:41:41",
+            "end-time": "2024-05-27T17:49:08",
+            "oht-id": 2586,
+            "errors": [],
+            "average-speed": 0.5756442976211275,
+            "out-of-deadline": true
+        },
+        {
             "start-time": "2024-05-27T17:35:35",
             "end-time": "2024-05-27T17:36:47",
             "oht-id": 2586,
@@ -281,22 +273,6 @@
             "oht-id": 2586,
             "errors": [],
             "average-speed": 2.445536839334588,
-            "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T17:44:51",
-            "end-time": "2024-05-27T17:46:13",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.0331807226301677,
-            "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T17:46:19",
-            "end-time": "2024-05-27T17:47:29",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.6454571451459612,
             "out-of-deadline": false
         },
         {
@@ -322,22 +298,6 @@
             "errors": [],
             "average-speed": 1.376898308931771,
             "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T17:58:57",
-            "end-time": "2024-05-27T18:00:44",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 1.4682407496428047,
-            "out-of-deadline": false
-        },
-        {
-            "start-time": "2024-05-27T18:14:37",
-            "end-time": "2024-05-27T18:21:13",
-            "oht-id": 2586,
-            "errors": [],
-            "average-speed": 0.7078942059719893,
-            "out-of-deadline": true
         }
     ]
 }
