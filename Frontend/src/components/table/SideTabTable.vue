@@ -114,6 +114,8 @@ onUnmounted(() => {
 function formatCellContent(column, cell) {
   if (column === "작업 성공여부") {
     return cell ? "성공" : "실패";
+  } else if (column === "에러") {
+    return cell == 300 ? "설비 에러" : cell == 200 ? "OHT 에러" : "" 
   }
   return cell;
 }

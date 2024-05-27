@@ -106,6 +106,8 @@ function formatCellContent(column, cell) {
     return cell ? "성공" : "실패";
   } else if (column === "물류 적재여부") {
     return cell ? "적재" : "없음";
+  } else if (column === "에러") {
+    return cell == 300 ? "설비 에러" : cell == 200 ? "OHT 에러" : ""
   }
   return cell;
 }
@@ -233,6 +235,7 @@ td.table-cell div.error-cell div.inner-content {
   color: #ac2e2e;
   font-weight: bold;
   border-radius: 5px;
+  /* font-size: 15px; */
 }
 td.table-cell div.status-cell div.inner-content {
   padding: 5px 10px;

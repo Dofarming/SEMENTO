@@ -28,7 +28,7 @@ onMounted(() => {
   <div class="side-bar-container">
     <div class="logo-container">
       <div class="logo">Semento<span class="logo-dot">.</span></div>
-      <div class="logo-subheading">OHT AI-분석 시스템</div>
+      <div class="logo-subheading">OHT AI 분석 시스템</div>
     </div>
     <div class="nav-bar-container">
       <div
@@ -121,7 +121,7 @@ onMounted(() => {
 }
 
 .dashboard-word {
-  padding-left: 10%;
+  padding-left: 7.6%;
   color: white;
 }
 
