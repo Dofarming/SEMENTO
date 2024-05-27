@@ -10,6 +10,8 @@ API_KEY = os.getenv("API_KEY")
 HOST = os.getenv("HOST")
 PORT = int(os.getenv("PORT"))
 
+THRESHOLD = 0.276245
+
 N_OHTS = 30
 FAILURE_DEADLINE = 200
 CONGESTION_CRITERION_TIME = 20
