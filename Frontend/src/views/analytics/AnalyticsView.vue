@@ -20,12 +20,18 @@ import SementoAiResultCard from "./components/detection-report/SementoAiResultCa
 import { useAnalysisStore } from "@/stores/analysis";
 import { useNotificationStore } from "@/stores/notification";
 import { onMounted, ref, computed, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import moment from "moment";
 
 import Loading from "@/components/loading/Loading.vue";
 
 const analysisStore = useAnalysisStore();
 const notificationStore = useNotificationStore();
+
+//test-data
+const activeItem = ref("")
+const router = useRouter();
+const route = useRoute();
 
 // const nowLoading = ref(false); //로딩창 기본 비활성화
 //==초기 화면
@@ -187,7 +193,11 @@ const handleAIDetectionButton = async () => {
   // notificationStore.sendNotification(); // 알림 띄우기
 };
 
-onMounted(async () => {});
+onMounted(async () => {
+  if (route.query.activate === 'true') {
+    handleAIDetectionButton();
+  }
+});
 </script>
 
 <template>

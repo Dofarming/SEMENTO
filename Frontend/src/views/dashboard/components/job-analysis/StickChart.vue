@@ -3,7 +3,7 @@ import { reactive, onMounted, ref, watchEffect, watch } from 'vue';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ChartDeferred from 'chartjs-plugin-deferred';
-
+import { useRouter, useRoute } from "vue-router";
 import { useDashboardStore } from "@/stores/dashboard";
 const dashboardStore = useDashboardStore();
 
@@ -31,6 +31,16 @@ const labels = [
     "12h", '13h', '14h', '15h', '16h', '17h', 
     '18h', '19h', '20h', '21h', '22h', '23h'
 ];
+
+//test-data
+//막대 그래프로 시뮬 이동
+const activeItem = ref("")
+const router = useRouter();
+const route = useRoute();
+function setActive(item, path) {
+  activeItem.value = item;
+  router.push({ name: path, query: { activate: 'true' } });
+}
 
 // Chart.js 컴포넌트 등록
 Chart.register(...registerables);
@@ -120,6 +130,18 @@ const chartOptions = reactive({
             },
         }
     },
+    onClick: (event, elements) => {
+        if (elements.length > 0) {
+            const element = elements[0];
+            // const datasetIndex = element.datasetIndex;
+            const index = element.index;
+
+            // Check if the clicked bar is the 15th bar (index 14)
+            if (index === 14) {
+                setActive('analytics', 'analytics')
+            }
+        }
+    }
 });
 
 function drawChart() {
@@ -132,6 +154,14 @@ function drawChart() {
 }
 
 onMounted(async() => {
+    const currentPath = route.path;
+    if (currentPath.startsWith("/")) {
+        activeItem.value = "dashboard";
+    } else if (currentPath.startsWith("/analytics")) {
+        activeItem.value = "analytics";
+    } else if (currentPath.startsWith("/simulation")) {
+        activeItem.value = "simulation-logs";
+    }
     ohtJobHourlyCount.value = dashboardStore.ohtJobHourlyData.map(item => item.work);
     chartData.datasets[0].data = [...ohtJobHourlyCount.value];
     drawChart();
