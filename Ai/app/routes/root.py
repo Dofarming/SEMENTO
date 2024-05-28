@@ -5,7 +5,7 @@ import category_encoders as ce
 import json
 from services.logs import get_logs
 from services.data_preprocess_by_path import data_preprocessing_for_Conan
-from services.data_preprocess_by_time import data_preprocessing_by_time
+from services.data_preprocess_by_time import data_preprocessing_by_time, data_preprocessing_by_time_with_detection_AI
 import os
 import tensorflow as tf
 from tensorflow.keras.models import load_model
@@ -86,7 +86,7 @@ async def analyze_by_Time(
             return {"congestion-info": []}
 
         start_time = time.time()        
-        deadlock_paths_and_error_info = await data_preprocessing_by_time(logs)        
+        deadlock_paths_and_error_info = await data_preprocessing_by_time_with_detection_AI(logs)        
         print(f"{random_number} 요청 - data_preprocessing_by_time 동작 시간: {round(time.time() - start_time)}초")
 
         if len(deadlock_paths_and_error_info["dataset"]) == 0:
